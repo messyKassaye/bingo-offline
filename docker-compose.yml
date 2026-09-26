@@ -1,0 +1,15 @@
+# Cashier/desktop bingo app only. The VITE_* values are read from .env when the
+# container starts (written to /config.json), so changing them needs only a
+# restart:
+#   docker compose up -d
+# For the full stack (api + postgres + redis + apps) use ../docker-compose.yml.
+
+services:
+  desktop:
+    build:
+      context: .
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - '${DESKTOP_PORT:-3000}:80'

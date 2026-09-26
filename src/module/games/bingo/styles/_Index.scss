@@ -1,0 +1,32 @@
+@import '../components/BingoFooter/BingoFooter.scss';
+@import '../components/BingoMain/BingoMain.scss';
+@import '../components/LEDNumber/LEDNumber.scss';
+@import '../components/RegisteredCartella/RegisteredCartella.scss';
+@import '../components/RuleAnimations/RuleAnimations.scss';
+@import '../components/StartNewGame/StartNewGame.scss';
+@import '../components/WinAmount/WinAmount.scss';
+@import '../components/SelectCartella/SelectCartell';
+@import '../components/BingoNumbers/BingoNumbers';
+@import '../components/WinnerBingoBoard/WinnerBingoBoard';
+@import '../components/CalledNumber/CalledNumber';
+.loading-dots {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: dot-flash 1.5s infinite;
+}
+
+@keyframes dot-flash {
+  0% {
+    content: '';
+  }
+  25% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  75% {
+    content: '...';
+  }
+}

@@ -1,0 +1,676 @@
+// FONT WEIGHTS
+$default-bold: 700;
+$regular: 300;
+$default-regular: 300;
+$weight-thin: 100;
+
+$chapa-color: #7dc400;
+$telebirr-color: #0072bc;
+$santim-pay-color: #d3af35;
+$games-bg-color: #f1f5f7;
+$games-color: #00bac7;
+$game-input-field-color: #211d36;
+$game-input-field-placeholder-color: #afaabc;
+$games-gray: #afaabc;
+$bg-color: #140e34;
+$keno-bg: #a70002;
+$keno-secondary-bg: #7c0202;
+
+// Medium Screens > 575px
+$font-size-small-md: 16px;
+$font-size-regular-md: 24px;
+$font-size-medium-md: 30px;
+$font-size-large-md: 35px;
+$line-height-small-md: 18px;
+$line-height-regular-md: 26px;
+$line-height-medium-md: 35px;
+$line-height-large-md: 45px;
+
+// Small Screens < 575px
+$font-size-small-sm: 16px;
+$font-size-regular-sm: 18px;
+$font-size-medium-sm: 20px;
+$font-size-large-sm: 24px;
+$line-height-small-sm: 16px;
+$line-height-regular-sm: 18px;
+$line-height-medium-sm: 22px;
+$line-height-large-sm: 25px;
+
+// COLORS
+$white: #fff;
+$deep-black: #000;
+$black: #3c3c3b;
+$black-light: #464657;
+$beige: #fff5ed;
+$orange-medium: #f49e7f;
+$vh-green: #6db3a6;
+$vh-gray: #344054;
+$vh-gray-600: #475467;
+$grey-dark: #716f6f;
+$grey-medium: #ecebf0;
+$grey-light: #f9f8f8;
+$grey-very-light: #e3e3e3;
+$blue-dark-medium: #3a3d47;
+$light-gray: #f2f2f2;
+
+// Brand Colors
+$color-ta-black: #383839;
+$color-ta-blue-black: #3b4d5f;
+$color-ta-blue-grey: #849dac;
+$color-ta-gold: #d6a76f;
+$color-ta-grey: #4f4f4f;
+$color-ta-off-white: #f7f7f7;
+$color-ta-white: #fff;
+$color-ta-yellow: #f6d98c;
+$color-ta-yellow-gradient: linear-gradient(
+  270deg,
+  #fde19e 0%,
+  #e1bc74 50%,
+  #c99a57 100%
+);
+
+// HEETS Packs
+$color-ta-heets-silver: #c7bbb6;
+$color-ta-heets-sienna: #b83d24;
+$color-ta-heets-green-zing: #c4e86b;
+$color-ta-heets-blue: #004d81;
+$color-ta-heets-amber: #dd5f13;
+$color-ta-heets-bronze: #863929;
+$color-ta-heets-purple-wave: #754b8c;
+$color-ta-heets-purple-wave-light: #c4a0d8;
+$color-ta-heets-turquoise: #018492;
+$color-ta-heets-yellow: #ffce00;
+$color-ta-heets-gold: #caa977;
+$color-ta-heets-green: #00945e;
+$color-ta-heets-green-zing-light: #d4eb8d;
+$color-ta-heets-burgundy: #7a263a;
+$color-ta-heets-teak: #b98e7a;
+$color-ta-heets-yugen: #957cb9;
+$color-ta-heets-apricity: #f29220;
+$color-ta-heets-noor: #c1893f;
+$color-ta-heets-glaze: #41ad49;
+$color-ta-heets-sienna-caps: #8cd1d8;
+$color-ta-heets-russet: #7a263a;
+$color-ta-heets-terra: #7a263a;
+$color-ta-heets-tropical-swift: #ffbf40;
+$color-ta-heets-yellow-green: #9b9b30;
+$color-ta-heets-bright-vibe: #b5bf10;
+$color-ta-heets-summer-breeze: #ec6642;
+$color-ta-heets-kelly: #d4eb8d;
+$color-ta-heets-fern: #00945e;
+$color-ta-heets-amarelo-fuse: #87b938;
+$color-ta-heets-ruby-fuse: #a10037;
+$color-ta-heets-black-green: #050505;
+$color-ta-heets-laguna-swift: #ffd35c;
+$color-ta-heets-it-laguna-swift-primary: #f49d20;
+$color-ta-heets-it-laguna-swift-secondary: #c76929;
+$color-ta-heets-it-laguna-swift-flower-1: #f19421;
+$color-ta-heets-it-laguna-swift-flower-2: #5492c4;
+$color-ta-heets-it-laguna-swift-flower-gradient-1: #5492c4;
+$color-ta-heets-it-laguna-swift-flower-gradient-2: #df8e33;
+
+// HEETS Backgrounds
+$color-ta-heets-bg-silver: #f9f8f8;
+$color-ta-heets-bg-sienna: #f8ece9;
+$color-ta-heets-bg-green-zing: #f9fdf0;
+$color-ta-heets-bg-blue: #e5edf2;
+$color-ta-heets-bg-amber: #fcefe7;
+$color-ta-heets-bg-bronze: #f3ebea;
+$color-ta-heets-bg-purple-wave: #f1edf3;
+$color-ta-heets-bg-purple-wave-light: #f9f5fb;
+$color-ta-heets-bg-turquoise: #e6f3f4;
+$color-ta-heets-bg-yellow: #fffae5;
+$color-ta-heets-bg-gold: #faf6f1;
+$color-ta-heets-bg-green: #e5f4ef;
+$color-ta-heets-bg-green-zing-light: #fbfdf4;
+$color-ta-heets-bg-burgundy: #f6edf1;
+$color-ta-heets-bg-teak: #f8f4f2;
+$color-ta-heets-bg-yugen: #f4f2f8;
+$color-ta-heets-bg-apricity: #fef4e9;
+$color-ta-heets-bg-noor: #f9f3ec;
+$color-ta-heets-bg-glaze: #ecf7ed;
+$color-ta-heets-bg-sienna-caps: #f4fafb;
+$color-ta-heets-bg-russet: #f2e9eb;
+$color-ta-heets-bg-terra: #f2e9eb;
+$color-ta-heets-bg-tropical-swift: #fff9ec;
+$color-ta-heets-bg-yellow-green: #f5f5ea;
+$color-ta-heets-bg-bright-vibe: #f8f9e7;
+$color-ta-heets-bg-summer-breeze: #fff6f3;
+$color-ta-heets-bg-kelly: #fbfdf4;
+$color-ta-heets-bg-fern: #e5f4ef;
+
+// rich-regular
+// smooth-regular
+
+// IQOS4 Colors
+$color-iqos-turquoise: #1cd9c5;
+$color-iqos-rich-regular: #66b7ef;
+$color-iqos-rich-regular-dark: #4486c3;
+$color-iqos-regular-dark: #00abdc;
+$color-iqos-regular: #46d3fb;
+$color-iqos-balanced-regular-dark: #6c96bf;
+$color-iqos-balanced-regular: #adceef;
+$color-iqos-smooth-dark: #6f7476;
+$color-iqos-smooth: #d0d3d5;
+$color-iqos-mint-dark: #169580;
+$color-iqos-mint: #34eccb;
+$color-iqos-menthol-dark: #10695e;
+$color-iqos-menthol: #76c5ba;
+$color-iqos-black-menthol-dark: #0f453f;
+$color-iqos-black-menthol: #0fb9a9;
+$color-iqos-yellow-menthol-dark: #69982e;
+$color-iqos-yellow-menthol: #e1e68a;
+$color-iqos-purple-menthol-dark: #3e396f;
+$color-iqos-purple-menthol: #afb2f7;
+$color-iqos-bright-menthol-dark: #988d12;
+$color-iqos-bright-menthol: #d9d061;
+$color-iqos-tropical-menthol-dark: #df6327;
+$color-iqos-tropical-menthol: #f9b565;
+$color-iqos-cta: #34303d;
+
+// FIIT COLORS
+$color-fiit-white: #ffff;
+$color-fiit-greywhite: #f1f2f6;
+$color-fiit-black: #000;
+$color-fiit-coral: #d63031;
+$color-fiit-blackborder: #2f3542;
+$color-fiit-slate: #34303d;
+
+// IQOS4 Global Colors
+$color-iqos-russet-primary: #8f3552;
+$color-iqos-russet-secondary: #4f1d34;
+$color-iqos-bronze-primary: #8e4c39;
+$color-iqos-bronze-secondary: #5b201a;
+$color-iqos-sienna-primary: #e83d47;
+$color-iqos-sienna-secondary: #ad2125;
+$color-iqos-teak-primary: #896459;
+$color-iqos-teak-secondary: #e0ad99;
+$color-iqos-amber-primary: #eb6425;
+$color-iqos-amber-secondary: #c73827;
+$color-iqos-yellow-primary: #eba923;
+$color-iqos-yellow-secondary: #fcdf70;
+$color-iqos-gold-primary: #c49968;
+$color-iqos-gold-secondary: #f7c893;
+$color-iqos-silver-primary: #8d8d8d;
+$color-iqos-silver-secondary: #d1d0cf;
+$color-iqos-blue-primary: #1474b1;
+$color-iqos-blue-secondary: #153659;
+$color-iqos-green-primary: #00a874;
+$color-iqos-green-secondary: #00643e;
+$color-iqos-turquoise-primary: #009ea9;
+$color-iqos-turquoise-secondary: #045b5f;
+$color-iqos-green-zing-primary: #98c149;
+$color-iqos-green-zing-secondary: #456a32;
+$color-iqos-purple-wave-primary: #886ca9;
+$color-iqos-purple-wave-secondary: #4e3384;
+$color-iqos-summer-breeze-primary: #ec6642;
+$color-iqos-summer-breeze-secondary: #bd2d26;
+$color-iqos-tropical-swift-primary: #f49d20;
+$color-iqos-tropical-swift-secondary: #c76929;
+$color-iqos-bright-vibe-primary: #bfb331;
+$color-iqos-bright-vibe-secondary: #7f762f;
+$color-iqos-slate-primary: #a2b4ca;
+$color-iqos-slate-secondary: #617e9f;
+$color-iqos-black-green-primary: #00715d;
+$color-iqos-black-green-secondary: #19322f;
+$color-iqos-fusion-menthol-primary: #553f72;
+$color-iqos-fusion-menthol-secondary: #8d82ac;
+$color-iqos-black-purple-primary: #362562;
+$color-iqos-black-purple-secondary: #aba1cf;
+$color-iqos-laguna-swift-primary: #f49d20;
+$color-iqos-laguna-swift-secondary: #c76929;
+
+// IQOS4 Colors - Flowers colors
+$color-iqos-rich-regular-flower-1: #2f79b0;
+$color-iqos-rich-regular-flower-2: #3c7fbf;
+$color-iqos-regular-flower-1: #078bba;
+$color-iqos-regular-flower-2: #066e9b;
+$color-iqos-balanced-regular-flower-1: #729bc4;
+$color-iqos-balanced-regular-flower-2: #8caed6;
+$color-iqos-smooth-regular-flower-1: #767c7e;
+$color-iqos-smooth-regular-flower-2: #787f81;
+$color-iqos-mint-flower-1: #1d9c87;
+$color-iqos-mint-flower-2: #51b79f;
+$color-iqos-menthol-flower-1: #137065;
+$color-iqos-menthol-flower-2: #18776b;
+$color-iqos-black-menthol-flower-1: #114c46;
+$color-iqos-black-menthol-flower-2: #18776b;
+$color-iqos-yellow-menthol-flower-1: #6e9e32;
+$color-iqos-yellow-menthol-flower-2: #7caf3b;
+$color-iqos-purple-menthol-flower-1: #453e74;
+$color-iqos-purple-menthol-flower-2: #544d88;
+$color-iqos-bright-menthol-flower-1: #9e9312;
+$color-iqos-bright-menthol-flower-2: #bfb211;
+$color-iqos-tropical-menthol-flower-1: #e36b2f;
+$color-iqos-tropical-menthol-flower-2: #e36b2f;
+$color-iqos-fusion-menthol-flower-1: #988ab2;
+$color-iqos-fusion-menthol-flower-2: #aaa0cc;
+$color-iqos-black-purple-flower-1: #5b4c96;
+$color-iqos-black-purple-flower-2: #5b4c96;
+
+// IQOS4 Global Colors - Flowers colors
+$color-iqos-russet-flower-1: #85304b;
+$color-iqos-russet-flower-2: #5e1d34;
+$color-iqos-bronze-flower-1: #874536;
+$color-iqos-bronze-flower-2: #722f26;
+$color-iqos-sienna-flower-1: #e5323f;
+$color-iqos-sienna-flower-2: #da1e31;
+$color-iqos-teak-flower-1: #956e61;
+$color-iqos-teak-flower-2: #b68c7e;
+$color-iqos-amber-flower-1: #e95925;
+$color-iqos-amber-flower-2: #e84d25;
+$color-iqos-yellow-flower-1: #f0b21d;
+$color-iqos-yellow-flower-2: #fdc615;
+$color-iqos-gold-flower-1: #bf9360;
+$color-iqos-gold-flower-2: #b68b57;
+$color-iqos-silver-flower-1: #868585;
+$color-iqos-silver-flower-2: #757577;
+$color-iqos-blue-flower-1: #0b6ca7;
+$color-iqos-blue-flower-2: #005a8f;
+$color-iqos-green-flower-1: #029868;
+$color-iqos-green-flower-2: #006b48;
+$color-iqos-turquoise-flower-1: #0096a2;
+$color-iqos-turquoise-flower-2: #027a89;
+$color-iqos-green-zing-flower-1: #8cba41;
+$color-iqos-green-zing-flower-2-1: #5492c4;
+$color-iqos-green-zing-flower-2-2: #96b85b;
+$color-iqos-green-zing-light-flower-1: #8cba41;
+$color-iqos-green-zing-light-flower-2-1: #54ba9f;
+$color-iqos-green-zing-light-flower-2-2: #96b85b;
+$color-iqos-purple-wave-flower-1: #8164a7;
+$color-iqos-purple-wave-flower-2-1: #5492c4;
+$color-iqos-purple-wave-flower-2-2: #7c66a4;
+$color-iqos-purple-wave-light-flower-1: #8164a7;
+$color-iqos-purple-wave-light-flower-2-1: #54ba9f;
+$color-iqos-purple-wave-light-flower-2-2: #7c66a4;
+$color-iqos-summer-breeze-flower-1: #e85a37;
+$color-iqos-summer-breeze-flower-2-1: #5492c4;
+$color-iqos-summer-breeze-flower-2-2: #ce4834;
+$color-iqos-summer-breeze-light-flower-1: #e85a37;
+$color-iqos-summer-breeze-light-flower-2-1: #54ba9f;
+$color-iqos-summer-breeze-light-flower-2-2: #ce4834;
+$color-iqos-tropical-swift-flower-1: #f19421;
+$color-iqos-tropical-swift-flower-2-1: #5492c4;
+$color-iqos-tropical-swift-flower-2-2: #df8e33;
+$color-iqos-bright-vibe-flower-1: #b7ad33;
+$color-iqos-bright-vibe-flower-2-1: #5492c4;
+$color-iqos-bright-vibe-flower-2-2: #b2ad42;
+$color-iqos-slate-flower-1: #97afc9;
+$color-iqos-slate-flower-2: #90a8c5;
+$color-iqos-black-green-flower-1: #006856;
+$color-iqos-black-green-flower-2: #014d45;
+$color-iqos-laguna-swift-flower-1: #f19421;
+$color-iqos-laguna-swift-flower-2-1: #5492c4;
+$color-iqos-laguna-swift-flower-2-2: #df8e33;
+
+// IQOS4 SENTIA COLORS
+
+$color-iqos-deep-bronze-primary: #562017;
+$color-iqos-deep-bronze-secondary: #b25b3c;
+$color-iqos-deep-bronze-flower-1: #4d1a13;
+$color-iqos-deep-bronze-flower-2: #562017;
+$color-iqos-deep-bronze-background: #823b29;
+$color-iqos-balanced-yellow-primary: #eebb1d;
+$color-iqos-balanced-yellow-secondary: #fce36e;
+$color-iqos-balanced-yellow-flower-1: #eab320;
+$color-iqos-balanced-yellow-flower-2: #eebb1d;
+$color-iqos-balanced-yellow-background: #f3ce2c;
+$color-iqos-clear-silver-primary: #797d79;
+$color-iqos-clear-silver-secondary: #d5d6de;
+$color-iqos-clear-silver-flower-1: #6e736e;
+$color-iqos-clear-silver-flower-2: #797d79;
+$color-iqos-clear-silver-background: #9fa5a3;
+$color-iqos-pure-teak-primary: #8e695b;
+$color-iqos-pure-teak-secondary: #e0ae95;
+$color-iqos-pure-teak-flower-1: #845f52;
+$color-iqos-pure-teak-flower-2: #8e695b;
+$color-iqos-pure-teak-background: #cea58a;
+$color-iqos-fresh-emerald-primary: #017876;
+$color-iqos-fresh-emerald-secondary: #48bdbe;
+$color-iqos-fresh-emerald-flower-1: #00716d;
+$color-iqos-fresh-emerald-flower-2: #017976;
+$color-iqos-fresh-emerald-background: #00b0ac;
+$color-iqos-cool-jade-primary: #00725e;
+$color-iqos-cool-jade-secondary: #74c4af;
+$color-iqos-cool-jade-flower-1: #006b56;
+$color-iqos-cool-jade-flower-2: #00725e;
+$color-iqos-cool-jade-background: #009b7b;
+$color-iqos-frost-green-primary: #005b4d;
+$color-iqos-frost-green-secondary: #0aa998;
+$color-iqos-frost-green-flower-1: #005243;
+$color-iqos-frost-green-flower-2: #005b4d;
+$color-iqos-frost-green-background: #008270;
+$color-iqos-icy-black-primary: #02362c;
+$color-iqos-icy-black-secondary: #00b19c;
+$color-iqos-icy-black-flower-1: #012e25;
+$color-iqos-icy-black-flower-2: #02362c;
+$color-iqos-icy-black-background: #008f76;
+$color-iqos-citrus-green-primary: #96c148;
+$color-iqos-citrus-green-secondary: #e1eba8;
+$color-iqos-citrus-green-flower-1: #8dbb44;
+$color-iqos-citrus-green-flower-2-1: #97c53e;
+$color-iqos-citrus-green-flower-2-2: #00a9a6;
+$color-iqos-citrus-green-background: #bbd457;
+$color-iqos-fresh-purple-primary: #3c3184;
+$color-iqos-fresh-purple-secondary: #d4c9df;
+$color-iqos-fresh-purple-flower-1: #372b6b;
+$color-iqos-fresh-purple-flower-2-1: #402d78;
+$color-iqos-fresh-purple-flower-2-2: #00a9a6;
+$color-iqos-fresh-purple-background: #6b5ba1;
+$color-iqos-tropical-yellow-primary: #e28e25;
+$color-iqos-tropical-yellow-secondary: #fac460;
+$color-iqos-tropical-yellow-flower-1: #dd8527;
+$color-iqos-tropical-yellow-flower-2-1: #dd8527;
+$color-iqos-tropical-yellow-flower-2-2: #00a9a6;
+$color-iqos-tropical-yellow-background: #f0ab1e;
+
+// Brand colors
+$color-iqos-brand-turquoise: #00d1d2;
+$color-iqos-unselected: #938e9e;
+$color-iqos-brand-teal: #19ccba;
+$color-iqos-brand-slate: #34303d;
+$color-iqos-brand-white: #fff;
+$color-iqos-brand-soft-white: #fffdfb;
+$color-iqos-brand-hard-white: #f7f4f1;
+
+// BOOTSTRAP BREAKPOINTS
+$breakpoint-mobile-extra-small: 330px;
+$breakpoint-mobile-small: 375px;
+$breakpoint-mobile-medium: 420px;
+$breakpoint-mobile-large: 575px;
+$breakpoint-small-start: 576px;
+$breakpoint-small-end: 767px;
+$breakpoint-small: 768px;
+$breakpoint-medium: 992px;
+$breakpoint-large: 1200px;
+$breakpoint-max-vh-app: 500px;
+$breakpoint-tablet: 834px;
+$breakpoint-kiosk-language-switcher: 500px;
+
+$kiosk-antique-white: #efefcd;
+$kiosk-pink: rgb(203 86 156 / 25%);
+$kiosk-sweet: rgb(208 160 59 / 25%);
+$kiosk-light-blue: rgb(76 126 195 / 25%);
+$kiosk-light-green: rgb(189 192 54 / 25%);
+$kiosk-light-gray: #e5e5e5;
+$kiosk-deep-blue: #08315d;
+$kiosk-dark-blue: #273a6b;
+
+// Experience colors
+// red-experience
+$red-dark-experience: #c3362c;
+$red-deep-dark-experience: #6e000f;
+$red-medium-experience: rgb(195 54 44 / 50%);
+$red-light-experience: rgb(195 54 44 / 25%);
+
+// white-experience
+$white-dark-experience: #bdc036;
+$white-deep-dark-experience: #4d5617;
+$white-medium-experience: rgb(189 192 54 / 50%);
+$white-light-experience: rgb(189 192 54 / 25%);
+
+// sparkling-experience
+$sparkling-dark-experience: #4c7ec3;
+$sparkling-deep-dark-experience: #273a6b;
+$sparkling-medium-experience: rgb(76 126 195 / 50%);
+$sparkling-light-experience: rgb(76 126 195 / 25%);
+
+// rose-experience
+$rose-dark-experience: #cb569c;
+$rose-deep-dark-experience: #5a2451;
+$rose-medium-experience: rgb(203 86 156 / 50%);
+$rose-light-experience: rgb(203 86 156 / 25%);
+
+// sweet-experience
+$sweet-dark-experience: #d0a03b;
+$sweet-deep-dark-experience: #6d4d0e;
+$sweet-medium-experience: rgb(208 160 59 / 50%);
+$sweet-light-experience: rgb(208 160 59 / 25%);
+
+// light
+$experience-red-light: rgb(195 54 44 / 25%);
+$experience-sparkling-light: rgb(76 126 195 / 25%);
+$experience-rose-light: rgb(203 86 156 / 25%);
+$experience-white-light: rgb(189 192 54 / 25%);
+$experience-sweet-light: rgb(208 160 59 / 25%);
+
+// default
+$experience-red: rgb(195 54 44 / 50%);
+$experience-sparkling: rgb(76 126 195 / 50%);
+$experience-rose: rgb(203 86 156 / 50%);
+$experience-white: rgb(189 192 54 / 50%);
+$experience-sweet: rgb(208 160 59 / 50%);
+
+// dark
+$experience-red-dark: #c3362c;
+$experience-sparkling-dark: #4c7ec3;
+$experience-rose-dark: #cb569c;
+$experience-white-dark: #bdc036;
+$experience-sweet-dark: #d0a03b;
+
+// deep dark
+$experience-red-deep-dark: #6e000f;
+$experience-sparkling-deep-dark: #273a6b;
+$experience-rose-deep-dark: #5a2451;
+$experience-white-deep-dark: #4d5617;
+$experience-sweet-deep-dark: #6d4d0e;
+
+// Coffee colors
+$coffee-gray: #ebebeb;
+$coffee-deep-gray: #bebebe;
+$coffee-dark-gray: #333;
+
+// deep-dark
+$coffee-brown-deep-dark: #390000; // CC01
+$coffee-red-deep-dark: #440f2d; // CC05
+$coffee-yellow-deep-dark: #423113; // CC03
+$coffee-green-deep-dark: #3a4527; // CC04
+$coffee-blue-deep-dark: #2c3350; // CC02
+// dark
+$coffee-brown-dark: #662017;
+$coffee-red-dark: #68294a;
+$coffee-yellow-dark: #6e552f;
+$coffee-green-dark: #616d45;
+$coffee-blue-dark: #434d72;
+
+// default
+$coffee-brown: rgb(102 32 23 / 50%);
+$coffee-red: rgb(104 41 74 / 50%);
+$coffee-yellow: rgb(110 85 47 / 50%);
+$coffee-green: rgb(97 109 69 / 50%);
+$coffee-blue: rgb(67 77 114 / 50%);
+
+// light
+$coffee-brown-light: rgb(102 32 23 / 25%);
+$coffee-red-light: rgb(104 41 74 / 25%);
+$coffee-yellow-light: rgb(110 85 47 / 25%);
+$coffee-green-light: rgb(97 109 69 / 25%);
+$coffee-blue-light: rgb(67 77 114 / 25%);
+
+// WINE-KIOSK COLORS
+$red-dark-wine-kiosk: #c3362c;
+$white-dark-wine-kiosk: #bdc036;
+$sparkling-dark-wine-kiosk: #4c7ec3;
+$rose-dark-wine-kiosk: #cb569c;
+$sweet-dark-wine-kiosk: #d0a03b;
+$red-deep-dark-wine-kiosk: #6e000f;
+$white-deep-dark-wine-kiosk: #4d5617;
+$sparkling-deep-dark-wine-kiosk: #273a6b;
+$rose-deep-dark-wine-kiosk: #5a2451;
+$sweet-deep-dark-wine-kiosk: #6d4d0e;
+$red-wine-kiosk: #c83d35;
+
+// Beer colors
+$beer-gray: #ebebeb;
+$beer-deep-gray: #bebebe;
+$beer-dark-gray: #333;
+
+// Primary
+$beer-pink-primary: #e8d3ad;
+$beer-blue-primary: #dab99e;
+$beer-green-primary: #f3d9b3;
+$beer-red-primary: #f3ccac;
+
+// Secondary
+$beer-pink-secondary: #d1a75c;
+$beer-blue-secondary: #b5743d;
+$beer-green-secondary: #e7b366;
+$beer-red-secondary: #e69959;
+$beer-black: #390000;
+
+// Beer brand colors
+$beer-poretti-dark: #323028;
+$beer-poretti-medium: #e4dcab;
+$beer-poretti-light: #f6edc7;
+
+// Bread colors
+$bread-dark: #000;
+
+// Primary
+$bread-1-primary: #f5c587;
+$bread-2-primary: #f5d1b1;
+$bread-3-primary: #d3b4a8;
+$bread-4-primary: #ebd1be;
+
+// Secondary
+$bread-1-secondary: #eb8c10;
+$bread-2-secondary: #e7b366;
+$bread-3-secondary: #a86951;
+$bread-4-secondary: #d8a37d;
+
+/* TA IQOS VeeV Colors */
+$color-iqos-veev-brand-white: #fff;
+$color-iqos-veev-brand-soft-white: #fffdfb;
+$color-iqos-veev-brand-turquoise: #00d1d2;
+$color-iqos-veev-brand-slate: #34303d;
+$color-iqos-veev-brand-amber: #e3813b;
+$color-iqos-veev-brand-coral: #e54360;
+$color-iqos-veev-brand-cobalt: #00a8e7;
+$color-iqos-veev-brand-light-gray: #e5e5e5;
+
+$color-iqos-veev-product-classic-auburn: #f38b01;
+$color-iqos-veev-product-classic-blond: #ffb712;
+$color-iqos-veev-product-classic-mint: #2ac5f4;
+$color-iqos-veev-product-green-mix: #71c7ad;
+$color-iqos-veev-product-red-mix: #c52846;
+$color-iqos-veev-product-mauve-mix: #81064e;
+$color-iqos-veev-product-sunglow-mix: #b84773;
+$color-iqos-veev-product-island-cascade: #e94268;
+$color-iqos-veev-product-velvet-valley: #ed6d04;
+$color-iqos-veev-product-bright-blend: #f5a05e;
+$color-iqos-veev-product-balanced-blend: #cc5815;
+$color-iqos-veev-product-rich-blend: #b5361a;
+
+$color-iqos-veev-aroma-honey: #debe78;
+$color-iqos-veev-aroma-exotic: #df414c;
+$color-iqos-veev-aroma-malty: #ab7fae;
+$color-iqos-veev-aroma-red-berry: #ea4e50;
+$color-iqos-veev-aroma-sweet: #f7966b;
+$color-iqos-veev-aroma-warm: #f16279;
+$color-iqos-veev-aroma-nutty: #d1643c;
+$color-iqos-veev-aroma-mellow: #f58232;
+$color-iqos-veev-aroma-smooth: #b04f1c;
+$color-iqos-veev-aroma-rounded: #f18500;
+$color-iqos-veev-aroma-toasted: #844333;
+$color-iqos-veev-aroma-balanced: #fbbd51;
+$color-iqos-veev-aroma-dark: #79161f;
+$color-iqos-veev-aroma-creamy: #ffc20e;
+$color-iqos-veev-aroma-rich: #6f1a08;
+$color-iqos-veev-aroma-sour: #b2d235;
+$color-iqos-veev-aroma-intense: #74103f;
+$color-iqos-veev-aroma-zesty: #b3a74a;
+$color-iqos-veev-aroma-velvety: #912066;
+$color-iqos-veev-aroma-herbal: #169753;
+$color-iqos-veev-aroma-floral: #c45291;
+$color-iqos-veev-aroma-cooling: #a7d4b9;
+$color-iqos-veev-aroma-ripe: #f177ae;
+$color-iqos-veev-aroma-minty: #2face0;
+$color-iqos-veev-aroma-red-fruit: #c93e5d;
+$color-iqos-veev-aroma-spicy: #c76f2c;
+
+// B2C Colors
+$b2c-gray: #eae9e3;
+$b2c-primary-purple: #80004b;
+$b2c-primary-purple-500: #ab2172;
+$b2c-primary-purple-600: #9e005d;
+$b2c-primary-purple-800: #620038;
+$b2c-gray-100: #f4f4f2;
+$b2c-gray-200: #e4e7ec;
+$b2c-gray-300: #d0d5dd;
+$b2c-gray-500: #667085;
+$b2c-gray-700: #344054;
+$b2c-gray-800: #1d2939;
+$b2c-grey-800: #323f4b;
+$b2c-gray-800-secondary: #353a45;
+$b2c-gray-900: #101828;
+$b2c-gray-900-secondary: #252830;
+$b2c-gray-unfilled: #e1e0d9;
+$b2c-error-500: #f04438;
+$b2c-primary-green-600: #007a64;
+$b2c-primary-green-50: #dfefeb;
+$breakpoint-mobile-b2c-b2b-product-card: 550px;
+
+// VH-updated-colors
+$vh-black: #232021;
+$vh-primary-green-25: #f2f9f5;
+$vh-primary-green-50: #d3eddf;
+$vh-primary-green-100: #b0dec6;
+$vh-primary-green-200: #b0dec6;
+$vh-primary-green-300: #6ac093;
+$vh-primary-green-400: #47b17a;
+$vh-primary-green-500: #24a360;
+$vh-primary-green-600: #fda830;
+$vh-primary-green-700: #186f41;
+$vh-primary-green-800: #135432;
+$vh-primary-green-900: #0d3b23;
+
+$vh-secondary-teal-25: #f7fbfb;
+$vh-secondary-teal-50: #d9e9ec;
+$vh-secondary-teal-100: #bad7dd;
+$vh-secondary-teal-200: #9cc6ce;
+$vh-secondary-teal-300: #7db4be;
+$vh-secondary-teal-400: #5fa3af;
+$vh-secondary-teal-500: #4091a0;
+$vh-secondary-teal-600: #367a86;
+$vh-secondary-teal-700: #2c636d;
+$vh-secondary-teal-800: #214b53;
+$vh-secondary-teal-900: #17343a;
+
+$vh-primary-azure-25: #f7fafd;
+$vh-primary-azure-50: #d8e6f3;
+$vh-primary-azure-100: #b9d1e9;
+$vh-primary-azure-200: #9abddf;
+$vh-primary-azure-300: #7ba9d5;
+$vh-primary-azure-400: #5c94cb;
+$vh-primary-azure-500: #3d80c1;
+$vh-primary-azure-600: #336ca2;
+$vh-primary-azure-700: #295783;
+$vh-primary-azure-800: #204364;
+$vh-primary-azure-900: #162e45;
+
+$vh-secondary-gray-200: #b0b5c0;
+$vh-secondary-gray-300: #979eac;
+$vh-secondary-gray-500: #667085;
+$vh-secondary-gray-600: #565e70;
+$vh-secondary-gray-700: #454c5a;
+$vh-secondary-gray-800: #353a45;
+$vh-secondary-gray-900: #252830;
+
+$vh-error-300: #fda29b;
+$vh-error-500: #f04438;
+$vh-error-600: #d92d20;
+
+$vh-wine-regular: #9e005d;
+$vh-beer-regular: #eb7f00;
+$vh-coffee-regular: #150400;
+
+$vh-wine-light: #ce80ae;
+$vh-beer-light: #f5bc7b;
+$vh-coffee-light: #8a8180;
+
+$vh-warm-gray-100: #f4f4f2;
+$vh-warm-gray-300: #e1e0d9;
+
+// Backgrounds:
+$vh-bg-warm-gradient: linear-gradient(180deg, #f4f4f2 0%, #fff 100%);
+$vh-bg-warm-gradient-reversed: linear-gradient(180deg, #fff 0%, #f4f4f2 100%);

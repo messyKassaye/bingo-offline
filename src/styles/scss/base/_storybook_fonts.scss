@@ -1,0 +1,1248 @@
+@import '../utils/storybook_variables';
+
+@font-face {
+  font-family: Montserrat;
+  src: url('@styles/assets/fonts/Montserrat-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 300;
+  src: url('@styles/assets/fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 500;
+  src: url('@styles/assets/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  src: url('@styles/assets/fonts/Montserrat-Bold.ttf');
+}
+
+// stylelint-disable-next-line
+$mp-font: Montserrat, sans-serif;
+
+.mp-font {
+  font-family: $mp-font !important;
+}
+
+@font-face {
+  font-family: YesevaOne;
+  src: url('@styles/assets/fonts/YesevaOne-Regular.ttf');
+  font-display: swap;
+}
+
+// stylelint-disable-next-line
+$yeseva-font: YesevaOne, sans-serif;
+
+.yeseva-font {
+  font-family: $yeseva-font !important;
+}
+
+@font-face {
+  font-family: Fraunces;
+  font-weight: 600;
+  src: url('@styles/assets/fonts/Fraunces-600.ttf');
+  font-display: swap;
+}
+
+// stylelint-disable-next-line
+$fraunces-font: Fraunces, sans-serif;
+
+.fraunces-font {
+  font-family: $fraunces-font !important;
+}
+
+@font-face {
+  font-family: IQOS;
+  src: url('@styles/assets/fonts/IQOS-Regular.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOS;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/IQOS-Bold.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOS;
+  font-weight: 300;
+  src: url('@styles/assets/fonts/IQOS-Light.otf');
+  font-display: swap;
+}
+
+/* stylelint-disable-next-line value-keyword-case */
+$ta-fiit-font: IQOS, sans-serif;
+
+.fiit-font {
+  font-family: $ta-fiit-font !important;
+}
+
+.fiit-h1 {
+  @extend .fiit-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 61px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 31px;
+  }
+
+  &.storybook-mob {
+    font-size: 20px;
+    line-height: 31px;
+  }
+}
+
+.fiit-h1-bold {
+  @extend .fiit-h1;
+
+  font-weight: bold;
+}
+
+.fiit-h2 {
+  @extend .fiit-font;
+
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 46px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  &.storybook-mob {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.fiit-h2-bold {
+  @extend .fiit-h2;
+
+  font-weight: bold;
+  line-height: 48px;
+}
+
+.fiit-h3 {
+  @extend .fiit-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 37px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  &.storybook-mob {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}
+
+.fiit-h3-bold {
+  @extend .fiit-h3;
+
+  font-weight: bold;
+}
+
+.fiit-h4 {
+  @extend .fiit-font;
+
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 92px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 30px;
+    line-height: 46px;
+  }
+
+  &.storybook-mob {
+    font-size: 30px;
+    line-height: 46px;
+  }
+}
+
+.fiit-h4-bold {
+  @extend .fiit-h4;
+
+  font-weight: bold;
+}
+
+.fiit-h5 {
+  @extend .fiit-font;
+
+  font-size: 70px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 107px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 40px;
+    line-height: 61px;
+  }
+
+  &.storybook-mob {
+    font-size: 40px;
+    line-height: 61px;
+  }
+}
+
+.fiit-h6 {
+  @extend .fiit-font;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 56px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  &.storybook-mob {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.fiit-p1 {
+  @extend .fiit-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 29px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &.storybook-mob {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.fiit-p1-bold {
+  @extend .fiit-p1;
+
+  font-weight: bold;
+  line-height: 31px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &.storybook-mob {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.fiit-p2 {
+  @extend .fiit-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.fiit-p2-light {
+  @extend .fiit-p2;
+
+  font-weight: 300;
+}
+
+.fiit-p2-bold {
+  @extend .fiit-p2;
+
+  font-weight: bold;
+}
+
+.fiit-p3 {
+  @extend .fiit-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 15px;
+  }
+
+  &.storybook-mob {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+.fiit-p3-bold {
+  @extend .fiit-p3;
+
+  font-weight: bold;
+}
+
+.fiit-p4 {
+  @extend .fiit-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 17px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 14px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-small) {
+    font-size: 9px;
+    line-height: 13.79px;
+  }
+
+  &.storybook-mob {
+    font-size: 9px;
+    line-height: 14px;
+  }
+}
+
+.fiit-p5-light {
+  @extend .fiit-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  &.storybook-mob {
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+
+.fiit-p5-bold {
+  @extend .fiit-p5-light;
+
+  font-weight: bold;
+}
+
+.fiit-p6 {
+  @extend .fiit-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 12px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 11px;
+  }
+
+  &.storybook-mob {
+    font-size: 7px;
+    line-height: 11px;
+  }
+}
+
+.fiit-p6-light {
+  @extend .fiit-p6;
+
+  font-weight: 300;
+}
+
+.fiit-p6-bold {
+  @extend .fiit-p6;
+
+  font-weight: bold;
+}
+
+.b2c-h4-bold-1 {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: 1500px) {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  @media screen and (min-width: 421px) and (max-width: $breakpoint-medium) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}
+
+.b2c-h2-small-bold {
+  @extend .mp-font;
+
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: 1500px) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  @media screen and (min-width: 421px) and (max-width: $breakpoint-medium) {
+    font-size: 22px;
+    line-height: 38px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+.b2c-body-1 {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: 1500px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media screen and (min-width: 421px) and (max-width: $breakpoint-medium) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.mp-h1 {
+  @extend .fraunces-font;
+
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  }
+}
+
+.mp-h2 {
+  @extend .fraunces-font;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+.mp-h2-d {
+  @extend .fraunces-font;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+.mp-h2-small {
+  @extend .fraunces-font;
+
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 34px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.mp-h3-bold {
+  @extend .mp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.mp-h3-d {
+  @extend .mp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.mp-h3 {
+  @extend .mp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.mp-h4-bold {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.mp-h4 {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.mp-body-0 {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.mp-body-0-bold {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.mp-body-1 {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.mp-body-1-bold {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.mp-body-2 {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.mp-body-2-bold {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.mp-body-3 {
+  @extend .mp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.mp-h1-sanserif {
+  @extend .mp-font;
+
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 85px;
+
+  @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+}
+
+// -------- Multi Product fonts used only for storybook--------
+
+.mp-h1-small {
+  @extend .fraunces-font;
+
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+}
+
+.mp-h2-small-small {
+  @extend .fraunces-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28px;
+}
+
+.mp-h3-bold-small {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.mp-h3-small {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.mp-h4-bold-small {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.mp-h4-small {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.body-0-small {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.body-0-small-bold {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.body-1-small {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.body-1-small-bold {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.body-2-small {
+  @extend .mp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.body-3-small-bold {
+  @extend .mp-font;
+
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.body-2-small-bold {
+  @extend .mp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.body-3-small {
+  @extend .mp-font;
+
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.mp-h1-medium {
+  @extend .fraunces-font;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+}
+
+.mp-h2-medium {
+  @extend .fraunces-font;
+
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+}
+
+.mp-h2-small-medium {
+  @extend .fraunces-font;
+
+  font-size: 28px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+}
+
+.mp-h3-bold-medium {
+  @extend .mp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.mp-h3-medium {
+  @extend .mp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.mp-h4-bold-medium {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.mp-h4-medium {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.body-1-medium {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.body-2-medium {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.body-2-medium-bold {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.mp-h1-large {
+  @extend .fraunces-font;
+
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+}
+
+.mp-h2-large {
+  @extend .fraunces-font;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 60px;
+  letter-spacing: -0.02em;
+}
+
+.mp-h2-small-large {
+  @extend .fraunces-font;
+
+  font-size: 32px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 34px;
+}
+
+.mp-h3-bold-large {
+  @extend .mp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.mp-h3-large {
+  @extend .mp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.iqos4-h4-question-bold {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 36.77px;
+
+  @media screen and (max-width: $breakpoint_small_end) {
+    font-size: 20px;
+    line-height: 30.64px;
+  }
+}
+
+.mp-h4-bold-large {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+.mp-h4-large {
+  @extend .mp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.body-1-large {
+  @extend .mp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.body-2-large {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.body-2-large-bold {
+  @extend .mp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.iqos4-pmi4-p2 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28.57px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.terea4-pmi4-p2-2 {
+  @extend .taste-advisor-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24.51px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.ta-4-mob-p3 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 15px;
+  }
+}
+
+.ta-4-p3-light {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+}
+
+.iqos4-one-p1 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 26px;
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 13px;
+    line-height: 14px;
+  }
+}
+
+.iqos4-p1 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.iqos4-mob-p1 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 16px;
+  }
+}
+
+.iqos4-h4-question {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 36.77px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 19.5px;
+  }
+}
+
+.ta-iqos4-mob-p2-2 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 21.45px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.ta-iqos4-desc-p3-bold {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24.51px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 21.45px;
+  }
+}

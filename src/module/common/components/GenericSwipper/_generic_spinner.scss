@@ -1,0 +1,45 @@
+.spinner-event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+
+  .content {
+    padding: 24px 16px 50px;
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .spinner {
+      box-sizing: border-box;
+      width: 56px;
+
+      /* the size */
+      aspect-ratio: 1;
+      padding: 8px;
+
+      /* the border thickness */
+      margin: 0 auto;
+      background: $games-color;
+
+      /* the color */
+      border-radius: 50%;
+      mask: var(--gradient);
+      animation: load 1s linear infinite;
+      mask-composite: source-out;
+      mask-composite: subtract;
+
+      --gradient:
+        conic-gradient(#0000, #000), linear-gradient(#000 0 0) content-box;
+    }
+
+    @keyframes load {
+      to {
+        transform: rotate(1turn);
+      }
+    }
+  }
+}

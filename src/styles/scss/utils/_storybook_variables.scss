@@ -1,0 +1,582 @@
+// MultiProduct Colors
+
+// Colors / Vinhood
+// Primary colors
+// gray
+$color-mp-vinhood-grey-25: #fcfcfd;
+$color-mp-vinhood-grey-50: #f9fafb;
+$color-mp-vinhood-grey-100: #f2f4f7;
+$color-mp-vinhood-grey-200: #e4e7ec;
+$color-mp-vinhood-grey-300: #d0d5dd;
+$color-mp-vinhood-grey-400: #98a2b3;
+$color-mp-vinhood-grey-500: #667085;
+$color-mp-vinhood-grey-600: #475467;
+$color-mp-vinhood-grey-700: #344054;
+$color-mp-vinhood-grey-800: #1d2939;
+$color-mp-vinhood-grey-900: #101828;
+$color-mp-vinhood-grey-1000: #232021;
+
+// primary purple
+$color-mp-vinhood-primary-purple-25: #fdfafc;
+$color-mp-vinhood-primary-purple-50: #f4e1ec;
+$color-mp-vinhood-primary-purple-100: #e1afcc;
+$color-mp-vinhood-primary-purple-200: #ce7dac;
+$color-mp-vinhood-primary-purple-300: #c3629c;
+$color-mp-vinhood-primary-purple-400: #b74287;
+$color-mp-vinhood-primary-purple-500: #ab2172;
+$color-mp-vinhood-primary-purple-600: #9e005d;
+$color-mp-vinhood-primary-purple-700: #80004b;
+$color-mp-vinhood-primary-purple-800: #620038;
+$color-mp-vinhood-primary-purple-900: #420026;
+
+// primary green
+$color-mp-vinhood-primary-green-25: #fafcfc;
+$color-mp-vinhood-primary-green-50: #e1eded;
+$color-mp-vinhood-primary-green-100: #b0d0ce;
+$color-mp-vinhood-primary-green-200: #7fb2af;
+$color-mp-vinhood-primary-green-300: #66a3a0;
+$color-mp-vinhood-primary-green-400: #4d9490;
+$color-mp-vinhood-primary-green-500: #348681;
+$color-mp-vinhood-primary-green-600: #1c7771;
+$color-mp-vinhood-primary-green-700: #036862;
+$color-mp-vinhood-primary-green-800: #01504b;
+$color-mp-vinhood-primary-green-900: #003633;
+
+// Secondary colors
+// blue gray
+$color-mp-vinhood-blue-gray-25: #fcfcfd;
+$color-mp-vinhood-blue-gray-50: #f8f9fc;
+$color-mp-vinhood-blue-gray-100: #eaecf5;
+$color-mp-vinhood-blue-gray-200: #c8cce5;
+$color-mp-vinhood-blue-gray-300: #9ea5d1;
+$color-mp-vinhood-blue-gray-400: #717bbc;
+$color-mp-vinhood-blue-gray-500: #4e5ba6;
+$color-mp-vinhood-blue-gray-600: #3e4784;
+$color-mp-vinhood-blue-gray-700: #363f72;
+$color-mp-vinhood-blue-gray-800: #293056;
+$color-mp-vinhood-blue-gray-900: #101323;
+
+// blue light
+$color-mp-vinhood-blue-light-25: #f5fbff;
+$color-mp-vinhood-blue-light-50: #f0f9ff;
+$color-mp-vinhood-blue-light-100: #e0f2fe;
+$color-mp-vinhood-blue-light-200: #b9e6fe;
+$color-mp-vinhood-blue-light-300: #7cd4fd;
+$color-mp-vinhood-blue-light-400: #36bffa;
+$color-mp-vinhood-blue-light-500: #0ba5ec;
+$color-mp-vinhood-blue-light-600: #0086c9;
+$color-mp-vinhood-blue-light-700: #026aa2;
+$color-mp-vinhood-blue-light-800: #065986;
+$color-mp-vinhood-blue-light-900: #0b4a6f;
+
+// error
+$color-mp-vinhood-error-25: #fffbfa;
+$color-mp-vinhood-error-50: #fef3f2;
+$color-mp-vinhood-error-100: #fee4e2;
+$color-mp-vinhood-error-200: #fecdca;
+$color-mp-vinhood-error-300: #fda29b;
+$color-mp-vinhood-error-400: #f97066;
+$color-mp-vinhood-error-500: #f04438;
+$color-mp-vinhood-error-600: #d92d20;
+$color-mp-vinhood-error-700: #b42318;
+$color-mp-vinhood-error-800: #912018;
+$color-mp-vinhood-error-900: #7a271a;
+
+// warnings
+$color-mp-vinhood-warnings-25: #fffcf5;
+$color-mp-vinhood-warnings-50: #fffaeb;
+$color-mp-vinhood-warnings-100: #fef0c7;
+$color-mp-vinhood-warnings-200: #fedf89;
+$color-mp-vinhood-warnings-300: #fec84b;
+$color-mp-vinhood-warnings-400: #fdb022;
+$color-mp-vinhood-warnings-500: #f79009;
+$color-mp-vinhood-warnings-600: #dc6803;
+$color-mp-vinhood-warnings-700: #b54708;
+$color-mp-vinhood-warnings-800: #93370d;
+$color-mp-vinhood-warnings-900: #7a2e0e;
+
+// success
+$color-mp-vinhood-success-25: #f6fef9;
+$color-mp-vinhood-success-50: #ecfdf3;
+$color-mp-vinhood-success-100: #d1fadf;
+$color-mp-vinhood-success-200: #a6f4c5;
+$color-mp-vinhood-success-300: #6ce9a6;
+$color-mp-vinhood-success-400: #32d583;
+$color-mp-vinhood-success-500: #12b76a;
+$color-mp-vinhood-success-600: #039855;
+$color-mp-vinhood-success-700: #027a48;
+$color-mp-vinhood-success-800: #05603a;
+$color-mp-vinhood-success-900: #054f31;
+
+// Colors / Neutral
+// Primary colors
+// gray
+$color-mp-neutral-grey-25: #fcfcfd;
+$color-mp-neutral-grey-50: #f9fafb;
+$color-mp-neutral-grey-100: #f2f4f7;
+$color-mp-neutral-grey-200: #e4e7ec;
+$color-mp-neutral-grey-300: #d0d5dd;
+$color-mp-neutral-grey-400: #98a2b3;
+$color-mp-neutral-grey-500: #667085;
+$color-mp-neutral-grey-600: #475467;
+$color-mp-neutral-grey-700: #344054;
+$color-mp-neutral-grey-800: #1d2939;
+$color-mp-neutral-grey-900: #101828;
+
+// primary neutral
+$color-mp-primary-neutral-grey-25: #fdfafc;
+$color-mp-primary-neutral-grey-50: #f4e1ec;
+$color-mp-primary-neutral-grey-100: #e1afcc;
+$color-mp-primary-neutral-grey-200: #ce7dac;
+$color-mp-primary-neutral-grey-300: #c3629c;
+$color-mp-primary-neutral-grey-400: #b74287;
+$color-mp-primary-neutral-grey-500: #ab2172;
+$color-mp-primary-neutral-grey-600: #9e005d;
+$color-mp-primary-neutral-grey-700: #80004b;
+$color-mp-primary-neutral-grey-800: #620038;
+$color-mp-primary-neutral-grey-900: #420026;
+
+// Secondary colors
+// blue gray
+$color-mp-neutral-blue-grey-25: #fcfcfd;
+$color-mp-neutral-blue-grey-50: #f8f9fc;
+$color-mp-neutral-blue-grey-100: #eaecf5;
+$color-mp-neutral-blue-grey-200: #c8cce5;
+$color-mp-neutral-blue-grey-300: #9ea5d1;
+$color-mp-neutral-blue-grey-400: #717bbc;
+$color-mp-neutral-blue-grey-500: #4e5ba6;
+$color-mp-neutral-blue-grey-600: #3e4784;
+$color-mp-neutral-blue-grey-700: #363f72;
+$color-mp-neutral-blue-grey-800: #293056;
+$color-mp-neutral-blue-grey-900: #101323;
+
+// blue light
+$color-mp-neutral-blue-light-25: #f5fbff;
+$color-mp-neutral-blue-light-50: #f0f9ff;
+$color-mp-neutral-blue-light-100: #e0f2fe;
+$color-mp-neutral-blue-light-200: #b9e6fe;
+$color-mp-neutral-blue-light-300: #7cd4fd;
+$color-mp-neutral-blue-light-400: #36bffa;
+$color-mp-neutral-blue-light-500: #0ba5ec;
+$color-mp-neutral-blue-light-600: #0086c9;
+$color-mp-neutral-blue-light-700: #026aa2;
+$color-mp-neutral-blue-light-800: #065986;
+$color-mp-neutral-blue-light-900: #0b4a6f;
+
+// error
+$color-mp-neutral-error-25: #fffbfa;
+$color-mp-neutral-error-50: #fef3f2;
+$color-mp-neutral-error-100: #fee4e2;
+$color-mp-neutral-error-200: #fecdca;
+$color-mp-neutral-error-300: #fda29b;
+$color-mp-neutral-error-400: #f97066;
+$color-mp-neutral-error-500: #f04438;
+$color-mp-neutral-error-600: #d92d20;
+$color-mp-neutral-error-700: #b42318;
+$color-mp-neutral-error-800: #912018;
+$color-mp-neutral-error-900: #7a271a;
+
+// warning
+$color-mp-neutral-warning-25: #fffcf5;
+$color-mp-neutral-warning-50: #fffaeb;
+$color-mp-neutral-warning-100: #fef0c7;
+$color-mp-neutral-warning-200: #fedf89;
+$color-mp-neutral-warning-300: #fec84b;
+$color-mp-neutral-warning-400: #fdb022;
+$color-mp-neutral-warning-500: #f79009;
+$color-mp-neutral-warning-600: #dc6803;
+$color-mp-neutral-warning-700: #b54708;
+$color-mp-neutral-warning-800: #93370d;
+$color-mp-neutral-warning-900: #7a2e0e;
+
+// success
+$color-mp-neutral-success-25: #f6fef9;
+$color-mp-neutral-success-50: #ecfdf3;
+$color-mp-neutral-success-100: #d1fadf;
+$color-mp-neutral-success-200: #a6f4c5;
+$color-mp-neutral-success-300: #6ce9a6;
+$color-mp-neutral-success-400: #32d583;
+$color-mp-neutral-success-500: #12b76a;
+$color-mp-neutral-success-600: #039855;
+$color-mp-neutral-success-700: #027a48;
+$color-mp-neutral-success-800: #05603a;
+$color-mp-neutral-success-900: #054f31;
+
+// Gradients
+// Gray gradients
+$color-mp-grey-one: conic-gradient(
+  from 259.08deg at 50% 50%,
+  #475467 0deg,
+  rgb(71 84 103 / 0%) 360deg
+);
+$color-mp-grey-two: linear-gradient(90deg, #475467 0%, #667085 100%);
+$color-mp-grey-three: linear-gradient(45deg, #344054 0%, #475467 100%);
+$color-mp-grey-four: linear-gradient(45deg, #1d2939 0%, #475467 100%);
+$color-mp-grey-five: linear-gradient(63.44deg, #1d2939 16.72%, #475467 83.39%);
+$color-mp-grey-six: linear-gradient(26.57deg, #1d2939 8.33%, #344054 91.67%);
+$color-mp-grey-seven: linear-gradient(45deg, #101828 0%, #475467 100%);
+
+// Primary gradients one
+$color-mp-primary-one: conic-gradient(
+  from 259.08deg at 50% 50%,
+  #9e005d 0deg,
+  rgb(127 86 217 / 0%) 360deg
+);
+$color-mp-primary-two: linear-gradient(90deg, #c3629c 0%, #f4e1ec 100%);
+$color-mp-primary-three: linear-gradient(45deg, #b74287 0%, #d083b0 100%);
+$color-mp-primary-four: linear-gradient(45deg, #80004b 0%, #b74287 100%);
+
+// Primary gradients two
+$color-mp-primary-five: conic-gradient(
+  from 259.08deg at 50% 50%,
+  #9e005d 0deg,
+  #b74287 360deg
+);
+$color-mp-primary-six: linear-gradient(90deg, #7f56d9 0%, #9e77ed 100%);
+$color-mp-primary-seven: linear-gradient(45deg, #6941c6 0%, #7f56d9 100%);
+$color-mp-primary-eight: linear-gradient(45deg, #01504b 0%, #348681 100%);
+
+.box-shadow-multi-product-container {
+  box-shadow: 0 0 10px 5px #f2f4f7;
+}
+
+.storybook-border-radius {
+  border-radius: 9px 9px 0 0;
+}
+
+// Taste Advisor
+// IQOS4 Ecomm
+// Colors
+// IQOS Brand colors
+$color-iqos-brand-soft-white: #fffdfb;
+$color-iqos-brand-hard-white: #f7f4f1;
+$color-iqos-brand-teal: #19ccba;
+$color-iqos-brand-slate: #34303d;
+$color-iqos-brand-amber: #e3813b;
+$color-iqos-brand-uk-grey: #f1f2f2;
+$color-iqos-brand-sentia-bright-blue: #00b4f3;
+
+// Vinhood Global colors
+$color-vinhood-global-black: #000;
+$color-vinhood-global-black-90: #1a1a1a;
+$color-vinhood-global-black-80: #333;
+$color-vinhood-global-black-70: #4d4d4d;
+$color-vinhood-global-black-60: #666;
+$color-vinhood-global-black-50: #808080;
+$color-vinhood-global-black-40: #999;
+$color-vinhood-global-black-30: #b3b3b3;
+$color-vinhood-global-black-20: #ccc;
+$color-vinhood-global-black-10: #e5e5e5;
+$color-vinhood-global-black-5: #f2f2f2;
+$color-vinhood-global-white: #fff;
+
+// Product Colors Japan only
+$color-iqos-rich-regular-dark: #4486c3;
+$color-iqos-rich-regular-light: #66b7ef;
+$color-iqos-regular-dark: #00abdc;
+$color-iqos-regular-light: #46d3fb;
+$color-iqos-balanced-regular-dark: #6c96bf;
+$color-iqos-balanced-regular-light: #adceef;
+$color-iqos-smooth-dark: #6f7476;
+$color-iqos-smooth-light: #d0d3d5;
+$color-iqos-mint-dark: #169580;
+$color-iqos-mint-light: #34eccb;
+$color-iqos-menthol-dark: #10695e;
+$color-iqos-menthol-light: #76c5ba;
+$color-iqos-black-menthol-dark: #0f453f;
+$color-iqos-black-menthol-light: #0fb9a9;
+$color-iqos-yellow-menthol-dark: #69982e;
+$color-iqos-yellow-menthol-light: #e1e68a;
+$color-iqos-purple-menthol-dark: #3e396f;
+$color-iqos-purple-menthol-light: #afb2f7;
+$color-iqos-bright-menthol-dark: #988d12;
+$color-iqos-bright-menthol-light: #d9d061;
+$color-iqos-tropical-menthol-dark: #df6327;
+$color-iqos-tropical-menthol-light: #f9b565;
+$color-iqos-fusion-menthol-primary: #553f72;
+$color-iqos-fusion-menthol-secondary: #8d82ac;
+$color-iqos-black-purple-primary: #362562;
+$color-iqos-black-purple-secondary: #aba1cf;
+
+// flower colors
+$color-iqos-rich-regular-flower-1: #2f79b0;
+$color-iqos-rich-regular-flower-2: #3c7fbf;
+$color-iqos-regular-flower-1: #078bba;
+$color-iqos-regular-flower-2: #066e9b;
+$color-iqos-balanced-regular-flower-1: #729bc4;
+$color-iqos-balanced-regular-flower-2: #8caed6;
+$color-iqos-smooth-regular-flower-1: #767c7e;
+$color-iqos-smooth-regular-flower-2: #787f81;
+$color-iqos-mint-flower-1: #1d9c87;
+$color-iqos-mint-flower-2: #51b79f;
+$color-iqos-menthol-flower-1: #137065;
+$color-iqos-menthol-flower-2: #18776b;
+$color-iqos-black-menthol-flower-1: #114c46;
+$color-iqos-black-menthol-flower-2: #18776b;
+$color-iqos-yellow-menthol-flower-1: #6e9e32;
+$color-iqos-yellow-menthol-flower-2: #7caf3b;
+$color-iqos-purple-menthol-flower-1: #453e74;
+$color-iqos-purple-menthol-flower-2: #544d88;
+$color-iqos-bright-menthol-flower-1: #9e9312;
+$color-iqos-bright-menthol-flower-2: #bfb211;
+$color-iqos-tropical-menthol-flower-1: #e36b2f;
+$color-iqos-tropical-menthol-flower-2: #e36b2f;
+$color-iqos-fusion-menthol-flower-1: #988ab2;
+$color-iqos-fusion-menthol-flower-2: #aaa0cc;
+$color-iqos-black-purple-flower-1: #5b4c96;
+$color-iqos-black-purple-flower-2: #5b4c96;
+
+// Product Colors Global
+// IQOS4 Global Colors
+$color-iqos-russet-primary: #8f3552;
+$color-iqos-russet-secondary: #4f1d34;
+$color-iqos-bronze-primary: #8e4c39;
+$color-iqos-bronze-secondary: #5b201a;
+$color-iqos-sienna-primary: #e83d47;
+$color-iqos-sienna-secondary: #ad2125;
+$color-iqos-teak-primary: #896459;
+$color-iqos-teak-secondary: #e0ad99;
+$color-iqos-amber-primary: #eb6425;
+$color-iqos-amber-secondary: #c73827;
+$color-iqos-yellow-primary: #eba923;
+$color-iqos-yellow-secondary: #fcdf70;
+$color-iqos-gold-primary: #c49968;
+$color-iqos-gold-secondary: #f7c893;
+$color-iqos-silver-primary: #8d8d8d;
+$color-iqos-silver-secondary: #d1d0cf;
+$color-iqos-blue-primary: #1474b1;
+$color-iqos-blue-secondary: #153659;
+$color-iqos-green-primary: #00a874;
+$color-iqos-green-secondary: #00643e;
+$color-iqos-turquoise-primary: #009ea9;
+$color-iqos-turquoise-secondary: #045b5f;
+$color-iqos-green-zing-primary: #98c149;
+$color-iqos-green-zing-secondary: #456a32;
+$color-iqos-purple-wave-primary: #886ca9;
+$color-iqos-purple-wave-secondary: #4e3384;
+$color-iqos-summer-breeze-primary: #ec6642;
+$color-iqos-summer-breeze-secondary: #bd2d26;
+$color-iqos-tropical-swift-primary: #f49d20;
+$color-iqos-tropical-swift-secondary: #c76929;
+$color-iqos-bright-vibe-primary: #bfb331;
+$color-iqos-bright-vibe-secondary: #7f762f;
+$color-iqos-slate-primary: #a2b4ca;
+$color-iqos-slate-secondary: #617e9f;
+$color-iqos-black-green-primary: #00715d;
+$color-iqos-black-green-secondary: #19322f;
+
+// IQOS Global Flowers Colors
+// IQOS4 Global Colors - Flowers colors
+$color-iqos-russet-flower-1: #85304b;
+$color-iqos-russet-flower-2: #5e1d34;
+$color-iqos-bronze-flower-1: #874536;
+$color-iqos-bronze-flower-2: #722f26;
+$color-iqos-sienna-flower-1: #e5323f;
+$color-iqos-sienna-flower-2: #da1e31;
+$color-iqos-teak-flower-1: #956e61;
+$color-iqos-teak-flower-2: #b68c7e;
+$color-iqos-amber-flower-1: #e95925;
+$color-iqos-amber-flower-2: #e84d25;
+$color-iqos-yellow-flower-1: #f0b21d;
+$color-iqos-yellow-flower-2: #fdc615;
+$color-iqos-gold-flower-1: #bf9360;
+$color-iqos-gold-flower-2: #b68b57;
+$color-iqos-silver-flower-1: #868585;
+$color-iqos-silver-flower-2: #757577;
+$color-iqos-blue-flower-1: #0b6ca7;
+$color-iqos-blue-flower-2: #005a8f;
+$color-iqos-green-flower-1: #029868;
+$color-iqos-green-flower-2: #006b48;
+$color-iqos-turquoise-flower-1: #0096a2;
+$color-iqos-turquoise-flower-2: #027a89;
+$color-iqos-green-zing-flower-1: #8cba41;
+$color-iqos-green-zing-flower-2: linear-gradient(
+  270deg,
+  #5492c4 0%,
+  #96b85b 100%
+);
+$color-iqos-green-zing-light-flower-1: #8cba41;
+$color-iqos-green-zing-light-flower-2: linear-gradient(
+  270deg,
+  #54ba9f 0%,
+  #96b85b 100%
+);
+$color-iqos-purple-wave-flower-1: #8164a7;
+$color-iqos-purple-wave-flower-2: linear-gradient(
+  270deg,
+  #5492c4 0%,
+  #7c66a4 100%
+);
+$color-iqos-purple-wave-light-flower-1: #8164a7;
+$color-iqos-purple-wave-light-flower-2: linear-gradient(
+  270deg,
+  #54ba9f 0%,
+  #7c66a4 100%
+);
+$color-iqos-summer-breeze-flower-1: #e85a37;
+$color-iqos-summer-breeze-flower-2: linear-gradient(
+  270deg,
+  #5492c4 0%,
+  #ce4834 100%
+);
+$color-iqos-summer-breeze-light-flower-1: #e85a37;
+$color-iqos-summer-breeze-light-flower-2: linear-gradient(
+  270deg,
+  #54ba9f 0%,
+  #ce4834 100%
+);
+$color-iqos-tropical-swift-flower-1: #f19421;
+$color-iqos-tropical-swift-flower-2: linear-gradient(
+  270deg,
+  #5492c4 0%,
+  #df8e33 100%
+);
+$color-iqos-bright-vibe-flower-1: #b7ad33;
+$color-iqos-bright-vibe-flower-2: linear-gradient(
+  270deg,
+  #5492c4 0%,
+  #b2ad42 100%
+);
+$color-iqos-slate-flower-1: #97afc9;
+$color-iqos-slate-flower-2: #90a8c5;
+$color-iqos-black-green-flower-1: #006856;
+$color-iqos-black-green-flower-2: #014d45;
+
+// Dimensions Colors
+$color-iqos-ammil-primary: linear-gradient(180deg, #6a625c 0%, #221b19 100%);
+$color-iqos-ammil-secondary: #49ba7c;
+$color-iqos-ammil-secondary-2: #ead398;
+$color-iqos-ammil-flower: #453f38;
+$color-iqos-apricity-primary: linear-gradient(180deg, #6a625c 0%, #221b19 100%);
+$color-iqos-apricity-secondary: #f79455;
+$color-iqos-apricity-secondary-2: #ead398;
+$color-iqos-apricity-flower: #453f38;
+$color-iqos-noor-primary: linear-gradient(180deg, #6a625c 0%, #221b19 100%);
+$color-iqos-noor-secondary: #fac13f;
+$color-iqos-noor-secondary-2: #a2857a;
+$color-iqos-noor-flower: #453f38;
+$color-iqos-yugen-primary: linear-gradient(180deg, #6a625c 0%, #221b19 100%);
+$color-iqos-yugen-secondary: #b09ecb;
+$color-iqos-yugen-secondary-2: #d097b4;
+$color-iqos-yugen-flower: #453f38;
+
+// IQOS4 SENTIA COLORS
+
+$color-iqos-deep-bronze-primary: #562017;
+$color-iqos-deep-bronze-secondary: #b25b3c;
+$color-iqos-deep-bronze-flower-1: #4d1a13;
+$color-iqos-deep-bronze-flower-2: #562017;
+$color-iqos-deep-bronze-background: #823b29;
+$color-iqos-balanced-yellow-primary: #eebb1d;
+$color-iqos-balanced-yellow-secondary: #fce36e;
+$color-iqos-balanced-yellow-flower-1: #eab320;
+$color-iqos-balanced-yellow-flower-2: #eebb1d;
+$color-iqos-balanced-yellow-background: #f3ce2c;
+$color-iqos-clear-silver-primary: #797d79;
+$color-iqos-clear-silver-secondary: #d5d6de;
+$color-iqos-clear-silver-flower-1: #6e736e;
+$color-iqos-clear-silver-flower-2: #797d79;
+$color-iqos-clear-silver-background: #9fa5a3;
+$color-iqos-pure-teak-primary: #8e695b;
+$color-iqos-pure-teak-secondary: #e0ae95;
+$color-iqos-pure-teak-flower-1: #845f52;
+$color-iqos-pure-teak-flower-2: #8e695b;
+$color-iqos-pure-teak-background: #cea58a;
+$color-iqos-fresh-emerald-primary: #017876;
+$color-iqos-fresh-emerald-secondary: #48bdbe;
+$color-iqos-fresh-emerald-flower-1: #00716d;
+$color-iqos-fresh-emerald-flower-2: #017976;
+$color-iqos-fresh-emerald-background: #00b0ac;
+$color-iqos-cool-jade-primary: #00725e;
+$color-iqos-cool-jade-secondary: #74c4af;
+$color-iqos-cool-jade-flower-1: #006b56;
+$color-iqos-cool-jade-flower-2: #00725e;
+$color-iqos-cool-jade-background: #009b7b;
+$color-iqos-frost-green-primary: #005b4d;
+$color-iqos-frost-green-secondary: #0aa998;
+$color-iqos-frost-green-flower-1: #005243;
+$color-iqos-frost-green-flower-2: #005b4d;
+$color-iqos-frost-green-background: #008270;
+$color-iqos-icy-black-primary: #02362c;
+$color-iqos-icy-black-secondary: #00b19c;
+$color-iqos-icy-black-flower-1: #012e25;
+$color-iqos-icy-black-flower-2: #02362c;
+$color-iqos-icy-black-background: #008f76;
+$color-iqos-citrus-green-primary: #96c148;
+$color-iqos-citrus-green-secondary: #e1eba8;
+$color-iqos-citrus-green-flower-1: #8dbb44;
+$color-iqos-citrus-green-flower-2: linear-gradient(
+  270deg,
+  #97c53e 0%,
+  #00a9a6 103.33%
+);
+$color-iqos-citrus-green-background: #bbd457;
+$color-iqos-fresh-purple-primary: #3c3184;
+$color-iqos-fresh-purple-secondary: #d4c9df;
+$color-iqos-fresh-purple-flower-1: #372b6b;
+$color-iqos-fresh-purple-flower-2: linear-gradient(
+  270deg,
+  #402d78 0%,
+  #00a9a6 100%
+);
+$color-iqos-fresh-purple-background: #6b5ba1;
+$color-iqos-tropical-yellow-primary: #e28e25;
+$color-iqos-tropical-yellow-secondary: #fac460;
+$color-iqos-tropical-yellow-flower-1: #dd8527;
+$color-iqos-tropical-yellow-flower-2: linear-gradient(
+  270deg,
+  #dd8527 0%,
+  #00a9a6 100%
+);
+$color-iqos-tropical-yellow-background: #f0ab1e;
+
+// FIIT COLORS
+// Brand Colors
+$color-fiit-brand-blue: #1253a1;
+$color-fiit-brand-soft-white: #fffdfb;
+$color-fiit-brand-white: #fff;
+$color-fiit-brand-slate: #34303d;
+$color-fiit-brand-black: #000;
+
+// Product Colors
+$color-fiit-regular-deep-primary: #aa4040;
+$color-fiit-regular-primary: #a38068;
+$color-fiit-regular-sky-primary: #ced1d3;
+$color-fiit-marine-primary: #3bd4ae;
+$color-fiit-crisp-primary: #cdd500;
+$color-fiit-tropic-primary: #f69b00;
+$color-fiit-viola-primary: #7e1f84;
+$color-fiit-spring-primary: #f2633c;
+$color-fiit-alpine-primary: #88f950;
+$color-fiit-background-light-gray: #e5e5e5;
+
+// HEETS V2 COLORS
+// Brand Colors
+$color-heets-v2-brand-soft-white: #fffdfb;
+$color-heets-v2-brand-white: #fff;
+$color-heets-v2-brand-cream: #f7f4f1;
+$color-heets-v2-brand-beige: #d9d1c8;
+$color-heets-v2-brand-fa3-turquoise: #00d1d2;
+$color-heets-v2-brand-slate: #34303d;
+$color-heets-v2-brand-black: #000;
+
+// Product Colors
+$color-heets-v2-product-bronze: #863929;
+$color-heets-v2-product-purple-wave: #754b8c;
+$color-heets-v2-product-sienna: #b83d24;
+$color-heets-v2-product-apricity: #f29220;
+$color-heets-v2-product-amber: #dd5f13;
+$color-heets-v2-product-noor: #c1893f;
+$color-heets-v2-product-yellow: #ffce00;
+$color-heets-v2-product-ammil: #41ad49;
+$color-heets-v2-product-sienna-caps: #8cd1d8;
+$color-heets-v2-product-yugen: #957cb9;
+$color-heets-v2-product-turquoise: #018492;
+$color-heets-v2-product-green: #00945e;
+$color-heets-v2-product-blue: #004d81;
+$color-heets-v2-product-teak: #b98e7a;
+$color-heets-v2-product-green-zing: #c4e86b;
+$color-heets-v2-product-russet: #7a263a;
+$color-heets-v2-product-amarelo: #87b938;
+$color-heets-v2-product-ruby-fuse: #a10037;
+$color-heets-v2-product-black-green: #050505;

@@ -1,0 +1,64 @@
+.ant-slider-track {
+  padding: 5px;
+  background-color: green !important;
+}
+
+.ant-slider-rail {
+  padding: 5px;
+  background-color: white !important;
+}
+
+.ant-slider-handle {
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.ant-menu {
+  background-color: #0e2238 !important;
+}
+
+.ant-menu-item {
+  background-color: transparent !important;
+  color: #8396ad !important ;
+  margin: 0 !important;
+  font-size: 1em !important;
+  &:hover {
+    color: white !important;
+  }
+}
+
+.ant-menu-item-selected {
+  color: #00bac7 !important;
+  background-color: #0c3549 !important;
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  padding-top: 25px !important;
+  padding-bottom: 25px !important;
+}
+
+.ant-menu-item-active {
+  color: #00bac7 !important;
+}
+
+.ant-menu-item-icon {
+  font-size: 1.8em !important;
+}
+
+.ant-menu-submenu-title-active {
+  color: #00bac7 !important;
+}
+
+.menu-item-size {
+  font-size: 1.12em !important;
+}
+.ant-menu-submenu-title {
+  color: #8396ad !important;
+  font-size: 1.12em !important;
+  &:hover {
+    color: $games-color !important;
+  }
+}

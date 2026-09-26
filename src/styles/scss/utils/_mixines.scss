@@ -1,0 +1,41 @@
+@mixin text-style($font, $size, $weight, $color) {
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin text-style-regular($font, $size, $color) {
+  font-family: $font;
+  font-size: $size;
+  color: $color;
+}
+
+@mixin input-style(
+  $width,
+  $height,
+  $color,
+  $color_focus,
+  $bg_color,
+  $bg_color_focus,
+  $bd_width,
+  $bd_color,
+  $bd_color_focus,
+  $bd_radius,
+  $box-shadow
+) {
+  width: $width;
+  height: $height;
+  color: $color;
+  background-color: $bg_color;
+  border-color: $bd_color;
+  border-width: $bd_width;
+  border-radius: $bd_radius;
+  box-shadow: $box-shadow;
+
+  &:focus {
+    color: $color_focus;
+    background-color: $bg_color_focus;
+    border-color: $bd_color_focus;
+  }
+}

@@ -1,0 +1,45 @@
+.registeted-cartella-container {
+  width: calc(100vw - 370px);
+  display: flex;
+  gap: 8px; /* Adjust as needed */
+  white-space: nowrap; /* Prevent wrapping of child elements */
+  scrollbar-width: thin;
+  overflow-y: hidden;
+  overflow: hidden;
+
+  .registeted-cartella {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: white; // Example background
+    border-radius: 8px;
+    width: 80px; // Ensure consistent width
+    height: 50px;
+    text-align: center;
+    flex-shrink: 0; // Prevent shrinking
+    color: #0e2238;
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+}
+
+.title {
+  color: white;
+}
+
+.start-animation {
+  animation: scroll 25s linear infinite; // Apply the marquee animation
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(100%); // Start outside the container on the right
+  }
+  to {
+    transform: translateX(
+      calc(-100% - 500px)
+    ); // Scroll all the way out on the left
+  }
+}

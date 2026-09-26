@@ -1,0 +1,18 @@
+.led-number-container {
+  width: 70px;
+}
+.led-number {
+  font-family: 'Digital7', monospace;
+  font-size: 3rem; /* Adjust size as needed */
+  color: #ff0000; /* Bright red */
+  background-color: #000; /* Black background */
+  display: inline-block;
+  padding: 5px;
+  border-radius: 10px; /* Slight rounding for a modern look */
+  text-align: center;
+}
+
+.led-number-title {
+  font-size: 1.8em;
+  line-height: 0.8;
+}

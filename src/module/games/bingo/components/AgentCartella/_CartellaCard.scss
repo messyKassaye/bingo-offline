@@ -1,0 +1,67 @@
+.print-bingo-card-container {
+  display: inline-block;
+  text-align: center;
+}
+
+.print-bingo-card-ceils {
+  border: 1px solid #ccc;
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  font-size: 20px;
+}
+
+.bingo-card-free-space {
+  font-size: 16px;
+  text-align: center;
+}
+.print-bingo-card-ceils.selected {
+  background-color: green; /* Change color as needed */
+  color: white;
+  border: 1px solid green;
+}
+
+.print-bingo-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns for B, I, N, G, O */
+}
+
+.print-bingo-header {
+  @extend .print-bingo-card-ceils;
+  font-weight: bold;
+  background-color: #bf252d;
+  border: none;
+  color: white;
+}
+
+.print-bingo-row {
+  display: contents; /* Allows each cell to align within its column */
+}
+
+.cartella-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 18px;
+  margin-top: 2px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@keyframes blinking-line {
+  0%,
+  100% {
+    background-color: yellow;
+    border: 1px solid yellow;
+  }
+  50% {
+    background-color: #df8507;
+    border: 1px solid #df8507;
+  }
+}
+
+.winner-blinking {
+  animation: blinking-line 1s infinite;
+}

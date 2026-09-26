@@ -1,0 +1,26 @@
+.new-game-label {
+  color: #1e90ff;
+}
+
+.new-game-inputs {
+  border: 1px solid #1e90ff !important;
+  font-size: 30px;
+  border-radius: 6px !important;
+  width: 100%;
+}
+
+.cartella-numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); /* 15 columns */
+  grid-template-rows: repeat(10, 1fr); /* 5 rows */
+  gap: 2px; /* Optional: space between grid items */
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+}
+
+.speaker-icon {
+  cursor: pointer;
+  &:hover {
+    color: #1e90ff;
+  }
+}

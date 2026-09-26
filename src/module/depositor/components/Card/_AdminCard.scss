@@ -1,0 +1,31 @@
+.card {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(14, 34, 56, 0.07);
+  border: 0px !important;
+  background-color: white !important;
+}
+
+.admin-card {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(14, 34, 56, 0.07);
+  border: 0px !important;
+  padding: 18px;
+  background-color: white !important;
+  border-radius: 10px;
+  h5 {
+    color: #cbd0d4;
+  }
+
+  .subtitle {
+    color: #cbd0d4;
+    font-size: 0.8rem !important;
+    --text-opacity: 1;
+    color: rgba(14, 34, 56, 0.3525) !important;
+  }
+
+  .progress-bg {
+    color: #31cf80;
+    background-color: #e4f9ee;
+    font-size: 0.625rem;
+    padding: 2px;
+    font-weight: 700;
+  }
+}

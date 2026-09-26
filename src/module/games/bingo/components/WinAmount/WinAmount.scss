@@ -1,0 +1,44 @@
+.win-amount-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.win-amount-header {
+  font-size: 10px;
+  font-weight: bold;
+  color: white; /* Blue color */
+  @media screen and (min-width: $breakpoint-large) {
+    font-size: 30px; /* Increased font size for TVs */
+  }
+
+  @media screen and (min-width: $breakpoint-medium) {
+    font-size: 20px; /* Increased font size for TVs */
+  }
+}
+
+.win-amount-value {
+  margin-top: -15px;
+  display: flex;
+  align-items: baseline;
+}
+
+.amount {
+  font-size: 70px;
+  font-weight: bold;
+  color: white;
+  margin-right: 5px;
+  @media screen and (min-width: 1200px) {
+    font-size: 80px; /* Increased font size for TVs */
+  }
+}
+
+.currency {
+  font-size: 30px;
+  font-weight: normal;
+  color: white;
+  @media screen and (min-width: 1200px) {
+    font-size: 35px; /* Increased font size for TVs */
+  }
+}

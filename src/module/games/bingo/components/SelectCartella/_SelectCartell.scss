@@ -1,0 +1,45 @@
+.cartella-numbers {
+  display: flex; /* Optional: for content centering */
+  justify-content: center; /* Optional: for content centering */
+  align-items: center; /* Optional: for content centering */
+  font-size: 10px;
+  color: black;
+  font-family: 'Digital7', monospace;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+
+  background-color: white;
+  padding: 2px;
+  &:hover {
+    transform: scale(1.1); /* Zoom effect */
+    background-color: #1e90ff;
+    border-radius: 10px;
+    color: white;
+  }
+
+  &:disabled {
+    pointer-events: none; /* Prevent hover interactions */
+    cursor: not-allowed;
+  }
+
+  @media screen and (min-width: 3840px) and (max-width: 5120px) {
+    font-size: 50px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: 1920px) and (max-width: 2560px) {
+    font-size: 40px;
+  }
+}
+
+.selected-cartella-number {
+  @extend .cartella-numbers;
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 10px;
+}

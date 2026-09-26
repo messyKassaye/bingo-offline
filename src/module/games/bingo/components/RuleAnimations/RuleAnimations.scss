@@ -1,0 +1,53 @@
+/* Bingo container styling */
+.bingo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  border: 1px solid white;
+}
+
+/* Bingo grid layout with auto width and centered */
+.bingo-grid {
+  display: grid; /* This ensures the grid doesn't take the full width */
+  grid-template-columns: repeat(5, 30px);
+  grid-template-rows: repeat(5, 30px);
+  gap: 2px; /* Reduced gap */
+  justify-content: center; /* Ensures grid is horizontally centered */
+}
+
+/* Bingo cell styling */
+.bingo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e2238;
+  font-size: 14px; /* Smaller font size */
+  font-weight: bold;
+  transition:
+    background-color 0.5s,
+    transform 0.5s;
+}
+
+/* Winning cell animation */
+.bingo-cell.winning {
+  background-color: red;
+  animation: 1s ease 0s infinite normal none running blink;
+  border: 1px solid red;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+    background-color: red;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    background-color: #ffd54f;
+    transform: scale(0.88);
+  }
+}

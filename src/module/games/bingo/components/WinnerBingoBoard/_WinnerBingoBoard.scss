@@ -1,0 +1,28 @@
+.bingo-card table {
+  border-collapse: collapse;
+  margin: 20px auto;
+  text-align: center;
+  width: 500px;
+}
+
+.bingo-card th,
+.bingo-card td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 50px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.bingo-card .called {
+  background-color: rgb(48, 48, 112);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.bingo-card .winning {
+  background-color: #0a944f;
+  color: #fff;
+  font-weight: bold;
+}

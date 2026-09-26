@@ -1,0 +1,80 @@
+.bingo-directions-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; // White background
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white; // White text
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: 3840px) and (max-width: 5120px) {
+      font-weight: 800;
+      width: 80px;
+      height: 80px;
+    }
+
+    @media screen and (min-width: 1920px) and (max-width: 2560px) {
+      font-weight: 800;
+      width: 80px;
+      height: 80px;
+    }
+
+    &.b-letter {
+      border: 5px solid #ce3d2d;
+      background-color: #ce3d2d; // Blue circle
+    }
+    &.i-letter {
+      border: 5px solid #e2be31;
+      background-color: #e2be31; // Blue circle
+    }
+
+    &.n-letter {
+      border: 5px solid #68a55b;
+      background-color: #68a55b; // Blue circle
+    }
+
+    &.g-letter {
+      border: 5px solid #56aef0;
+      background-color: #56aef0; // Blue circle
+    }
+
+    &.o-letter {
+      border: 5px solid #e7529f;
+      background-color: #e7529f; // Blue circle
+    }
+
+    .bingo-letter {
+      font-size: 1.6rem;
+      @media screen and (min-width: 3840px) and (max-width: 5120px) {
+        font-size: 2.2rem;
+      }
+
+      @media screen and (min-width: 1920px) and (max-width: 2560px) {
+        font-size: 2.2rem;
+      }
+    }
+
+    .bingo-number {
+      font-size: 1.8rem;
+      @media screen and (min-width: 3840px) and (max-width: 5120px) {
+        font-size: 2.2rem;
+      }
+
+      @media screen and (min-width: 1920px) and (max-width: 2560px) {
+        font-size: 2.2rem;
+      }
+    }
+  }
+}

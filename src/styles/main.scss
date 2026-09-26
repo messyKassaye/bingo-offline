@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* This will hide both horizontal and vertical overflow */
+}
+
+:root {
+  background-color: #f1f5f7;
+}
+
+@font-face {
+  font-family: 'Digital7';
+  src: url('./assets/fonts/digital-7.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './scss/base';
+@import './scss/utils';
+@import './scss/utils/colors';
+@import '../module/common/styles/Index';
+@import '../module/home/styles/Index';
+@import '../module/games/bingo/styles/Index';
+@import './scss/antd_reverse';
+@import '../module/depositor/styles/Index';

@@ -1,0 +1,71 @@
+.cards-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: auto;
+  gap: 8px;
+  padding: 5px;
+  width: 100%; /* Ensure the container doesn't exceed its parent width */
+  max-width: 100%; /* Prevent it from overflowing the viewport */
+
+  /* Hide scrollbar for aesthetics (optional) */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .common-card {
+    flex-shrink: 0;
+    min-width: 100px;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .cards {
+    @extend .common-card;
+    background: linear-gradient(to right, #0e2238, #0e2238);
+  }
+
+  .selected-cards {
+    @extend .common-card;
+    background: green;
+  }
+}
+.selected-cards-container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.selected-cartellas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  align-items: start;
+  gap: 8px;
+  width: 100%;
+  padding: 0 4px;
+
+  > * {
+    min-width: 0;
+    width: 100%;
+  }
+
+  &.single-cartella {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@import '../components/TopNavigation/TopNavigation';

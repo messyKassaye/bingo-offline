@@ -1,0 +1,14 @@
+{
+  "name": "bingo-balance-issuer",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite --config vite.config.ts",
+    "build": "vite build --config vite.config.ts",
+    "tauri": "tauri"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.5",
+    "vite": "^6.0.0"
+  }
+}

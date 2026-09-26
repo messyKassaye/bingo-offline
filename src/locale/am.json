@@ -1,0 +1,23 @@
+{
+  "appName": "ቢንጎ",
+  "language": "ቋንቁ",
+  "signIn": "ወደ አካውንትዎ መግቢያ",
+  "usernameAndPassword": "የመለያ ስምዎን እና የይለፍ ቃልዎን(ፓስዎርድ) ያስገቡ ",
+  "username": "የመለያ ስም",
+  "usernameError": "የመለያ ስምዎን ያስገቡ",
+  "password": "ፓስዎርድ",
+  "passwordError": "ፓስዎርድዎን ያስገቡ",
+  "signInBtnText": "ግባ",
+  "settings": "ማስተካከያ",
+  "serverAddress": "የሰርቨሩ አድራሻ",
+  "serverAddressPlaceholder": "የሰርቨሩ አድራሻ",
+  "serverAddressErrorMessage": "እባክዎ የሰርቨሩን አድራሻ ያስገቡ",
+  "cashierUserName": "የካሼር መለያ ስም",
+  "cashierUsernamePlaceholder": "የካሼር መለያ ስም",
+  "cashierUsernameErrorMessage": "እባክዎ የካሼር መለያ ስም ያስገቡ",
+  "cashierPassword": "የይለፍ ቃል ውይም ፓስዎርድ",
+  "cashierPasswordPlaceholder": "የይለፍ ቃል ውይም ፓስዎርድ",
+  "cashierPasswordErrorMessage": "እባክዎ የይለፍ ቃል ውይም ፓስዎርድ ያስገቡ",
+  "submit": "መዝግብ",
+  "cancel": "ተወው"
+}

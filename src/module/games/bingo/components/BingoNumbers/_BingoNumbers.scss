@@ -1,0 +1,39 @@
+.bingo-number-item {
+  display: flex; /* Optional: for content centering */
+  justify-content: center; /* Optional: for content centering */
+  align-items: center; /* Optional: for content centering */
+  font-size: 40px;
+  color: white;
+  font-family: 'Digital7', monospace;
+  border-radius: 10px;
+
+  @media screen and (min-width: 3840px) and (max-width: 5120px) {
+    font-size: 75px;
+  }
+
+  @media screen and (min-width: 1024px) and (max-width: 1440px) {
+    font-size: 40px;
+  }
+
+  @media screen and (min-width: 1920px) and (max-width: 2560px) {
+    font-size: 70px;
+  }
+}
+
+.called-bingo-number {
+  @extend .bingo-number-item;
+  background-color: red;
+  animation: scale-rotate 0.8s ease-in-out forwards;
+}
+
+@keyframes scale-rotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.4) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

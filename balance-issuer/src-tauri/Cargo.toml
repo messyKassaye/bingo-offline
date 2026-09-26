@@ -1,0 +1,13 @@
+[package]
+name = "bingo-balance-issuer"
+version = "0.1.0"
+description = "Offline signed balance credit issuer for Bingo Desktop"
+authors = ["Bingo"]
+edition = "2021"
+rust-version = "1.77.2"
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+tauri = { version = "2.11.6", features = [] }

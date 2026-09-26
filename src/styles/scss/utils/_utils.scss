@@ -1,0 +1,424 @@
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.bottom-border {
+  border-bottom: 1px solid $game-input-field-color;
+}
+
+.text-color {
+  color: #0e2238;
+}
+
+.primary-text-color {
+  color: #00bac7 !important;
+}
+
+.column-filter {
+  width: 100px !important;
+  padding: 0px !important;
+  height: 30px !important;
+}
+
+.forced-horizontal-steps {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  @media screen and (min-width: 532px) {
+    width: 100%;
+  }
+}
+
+.forced-horizontal-steps {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.button-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps the aspect ratio */
+}
+
+.h2 {
+  @extend .text-color;
+  font-size: calc(1.2625rem + 0.15vw);
+  line-height: 1.37;
+}
+
+.btn {
+  font-weight: 600 !important;
+  font-size: 0.875rem;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.login-password-input {
+  border-radius: 8px !important;
+  padding: 0px !important;
+  background-color: transparent !important;
+}
+
+.cancel-button {
+  background-color: #f6f7f8 !important;
+  border-color: #f6f7f8 !important;
+  font-weight: 600;
+  color: black !important;
+  &:hover {
+    background-color: #d1d2d3 !important;
+  }
+}
+
+.unique-card {
+  .ant-card-body {
+    padding: 0px !important;
+  }
+}
+
+.unique-filter {
+  .ant-select-dropdown {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    width: auto !important;
+  }
+  .ant-select-item-option-content {
+    color: #9ea9b4 !important;
+  }
+  .ant-select-selection-item {
+    background-color: transparent !important;
+    color: #9ea9b4 !important;
+  }
+
+  .ant-select-selector {
+    background-color: transparent !important;
+    border: none !important;
+    color: #9ea9b4 !important;
+    &:active {
+      color: #9ea9b4 !important;
+    }
+  }
+
+  .ant-select-selection-placeholder {
+    color: #9ea9b4 !important;
+  }
+
+  .ant-select-arrow {
+    color: #9ea9b4 !important;
+  }
+
+  .ant-select-item-option-active {
+    background-color: #f6f7f8 !important;
+    color: white !important;
+  }
+
+  .ant-select-item-option-selected {
+    background-color: #f6f7f8 !important;
+    color: #9ea9b4 !important;
+  }
+}
+
+.menu-fontsize {
+  font-size: 1.2em !important;
+}
+
+.disabled-input {
+  background-color: #edeef0 !important;
+  padding: 5px !important;
+  .ant-input {
+    background-color: transparent !important;
+    border: none !important;
+    color: black !important;
+  }
+}
+
+.h4 {
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.375;
+}
+
+.breadcrumb {
+  color: #9ea9b4;
+}
+
+.primary-color {
+  color: $games-color;
+}
+
+.top-border {
+  border-top: 1px solid $game-input-field-color;
+}
+
+.bordered-btn {
+  background-color: transparent;
+  border: 1px solid $games-color;
+  color: $games-color;
+}
+
+.pos-static {
+  position: static;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.pt-25px {
+  padding-top: 25px;
+}
+
+.pb-45px {
+  padding-bottom: 45px;
+}
+
+.pt-6_75vh {
+  padding-top: 6.75vh;
+}
+
+.plr-2_2vw {
+  padding-right: 2.2vw;
+  padding-left: 2.2vw;
+}
+
+.mlr-5vw {
+  margin: 0 3vw;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-left {
+  justify-content: left;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.w-30percent {
+  width: 30%;
+}
+
+.w-70percent {
+  width: 70%;
+}
+
+.w-90percent {
+  width: 90%;
+}
+
+.d-block {
+  display: block;
+}
+
+.float-none {
+  float: none;
+}
+
+.mx-auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+$margin-top-px: (10, 30, 90, 140, 155);
+
+@each $data in $margin-top-px {
+  .mt-#{$data}px {
+    margin-top: $data + px;
+  }
+}
+
+.secondary-text-color {
+  color: #afaabc;
+}
+
+.mr-25px {
+  margin-right: 25px;
+}
+
+.mb-30px {
+  margin-bottom: 30px;
+}
+.br-8 {
+  border-radius: 8px;
+}
+.mb-60px {
+  margin-bottom: 60px;
+}
+
+.mb-90px {
+  margin-bottom: 90px;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.h-100px {
+  height: 100px;
+}
+
+.w-100px {
+  width: 100px;
+}
+
+.mx-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-page-top {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.position-page-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flex-basis-none {
+  flex-basis: auto;
+}
+
+.border-none {
+  border: none !important;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.px-2 {
+  padding: 0 5%;
+}
+
+.flex-column-important {
+  flex-direction: column !important;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.h-100-fm {
+  span {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.disabled-clicks {
+  pointer-events: none;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.text-underlined {
+  text-decoration: underline;
+}
+
+.experience-wrapper-margins {
+  @media screen and (max-width: 600px) {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+}
+
+.d-iphone-none {
+  position: absolute;
+  color: transparent;
+}
+
+.flex-56percent {
+  flex: 0 0 53%;
+}
+
+.inner-p-mb-0 {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.color-pmi3 {
+  color: $color-iqos-cta !important;
+}
+
+.text-soft-white {
+  color: $color-iqos-brand-soft-white;
+}
+
+.text-veev-color {
+  color: $color-iqos-veev-brand-slate;
+}
+
+.text-brand-slate-color {
+  color: $color-iqos-brand-slate;
+}
+
+.d-mobile-none {
+  @media screen and (max-width: $breakpoint-small) {
+    display: none !important;
+  }
+}
+
+.d-mobile-block {
+  display: none;
+
+  @media screen and (max-width: $breakpoint-small) {
+    display: block !important;
+  }
+}
+
+.reset-z-index {
+  z-index: auto !important;
+}
+
+.width-50px {
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.width-65px {
+  min-width: 65px;
+  max-width: 65px;
+}

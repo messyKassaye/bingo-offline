@@ -1,0 +1,28 @@
+.grid-bingo-card-ceils {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+  font-size: 10px;
+}
+
+.grid-bingo-card-free-space {
+  font-size: 10px;
+  text-align: center;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.grid-bingo-card-ceils.selected {
+  background-color: green; /* Change color as needed */
+  color: white;
+  border: 1px solid green;
+}
+
+.grid-bingo-header {
+  @extend .grid-bingo-card-ceils;
+  font-weight: bold;
+  background-color: #bf252d;
+  border: none;
+  color: white;
+}

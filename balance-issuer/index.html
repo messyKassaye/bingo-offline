@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e2238" />
+    <title>Bingo Balance Issuer</title>
+  </head>
+  <body>
+    <main id="app">
+      <header class="page-header">
+        <div class="brand-mark">B</div>
+        <div>
+          <p class="eyebrow">BINGO DESKTOP</p>
+          <h1>Balance issuer</h1>
+          <p class="subheading">Enter the customer’s device ID and the amount received.</p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <label for="device-id">Customer device ID</label>
+        <input id="device-id" type="text" autocomplete="off" spellcheck="false" placeholder="Paste the customer’s device ID" />
+        <label for="amount-received">Amount received</label>
+        <div class="amount-input">
+          <input id="amount-received" type="number" min="0.01" step="0.01" placeholder="For example, 200" />
+          <span>ETB</span>
+        </div>
+        <div class="credit-preview">
+          <span>Balance credit (5× amount received)</span>
+          <strong id="credit-amount">0.00 ETB</strong>
+        </div>
+        <div id="status" class="status hidden" role="status"></div>
+        <button id="issue-credit" class="button button-primary">Generate balance text</button>
+        <div id="credit-output" class="key-output hidden">
+          <label for="signed-credit">Balance text — send this to the customer</label>
+          <textarea id="signed-credit" rows="4" spellcheck="false" readonly></textarea>
+          <button id="copy-credit" class="button button-secondary">Copy balance text</button>
+        </div>
+      </section>
+
+      <footer>Balance codes are tied to the device and expire after 30 days.</footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

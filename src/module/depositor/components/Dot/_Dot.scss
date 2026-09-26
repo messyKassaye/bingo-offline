@@ -1,0 +1,23 @@
+.single-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--dot-color); /* Color of the dots */
+  border-radius: 50%;
+  margin: 0 4px;
+
+  &.small {
+    width: 8px;
+    height: 8px;
+  }
+
+  &.medium {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.large {
+    width: 20px;
+    height: 20px;
+  }
+}

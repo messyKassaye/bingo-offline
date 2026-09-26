@@ -1,0 +1,5733 @@
+@use 'sass:math';
+
+@import '../utils/mixines';
+@import '../utils/variables';
+@import '../base/storybook_fonts';
+
+@font-face {
+  font-family: Arial;
+  src: url('@styles/assets/fonts/ArialCE.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOS;
+  src: url('@styles/assets/fonts/IQOS-Regular.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOS;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/IQOS-Bold.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOS;
+  font-weight: 300;
+  src: url('@styles/assets/fonts/IQOS-Light.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSans;
+  src: url('@styles/assets/fonts/NotoSans-Regular.ttf');
+  src: url('@styles/assets/fonts/NotoSans-Regular.eot');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSans;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/NotoSans-Bold.ttf');
+  src: url('@styles/assets/fonts/NotoSans-Bold.eot');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url('@styles/assets/fonts/Roboto-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/Roboto-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  src: url('@styles/assets/fonts/RobotoSlab-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: RobotoSlab;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/RobotoSlab-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: HelveticaNeueLTCYR;
+  src: url('@styles/assets/fonts/HelveticaNeueLTCYR-Roman.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSansJP;
+  src: url('@styles/assets/fonts/NotoSansJP-Regular.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSansJP;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/NotoSansJP-Bold.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSansJP;
+  font-weight: 100;
+  src: url('@styles/assets/fonts/NotoSansJP-Light.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOSGreek;
+  src: url('@styles/assets/fonts/IQOSGreek-Regular.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOSGreek;
+  font-weight: 100;
+  src: url('@styles/assets/fonts/IQOSGreek-Light.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: IQOSGreek;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/IQOSGreek-Bold.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSansArabic;
+  src: url('@styles/assets/fonts/NotoSansArabic-Regular.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: NotoSansArabic;
+  font-weight: bold;
+  src: url('@styles/assets/fonts/NotoSansArabic-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Haim;
+  font-weight: 700;
+  src: url('@styles/assets/fonts/Haim-Medium.otf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Haim;
+  font-weight: normal;
+  src: url('@styles/assets/fonts/Haim-Condensed.otf');
+  font-display: swap;
+}
+
+// MultiProduct Fonts
+
+@font-face {
+  font-family: Montserrat;
+  src: url('@styles/assets/fonts/Montserrat-Regular.ttf');
+  font-display: swap;
+}
+
+// stylelint-disable-next-line
+$mp-font: Montserrat, sans-serif;
+$fr-font: Fraunces;
+
+.mp-font {
+  font-family: $mp-font !important;
+}
+
+@font-face {
+  font-family: YesevaOne;
+  src: url('@styles/assets/fonts/YesevaOne-Regular.ttf');
+  font-display: swap;
+}
+
+// stylelint-disable-next-line
+$yeseva-font: YesevaOne, sans-serif;
+
+.yeseva-font {
+  font-family: $yeseva-font !important;
+}
+
+$roboto-slab-font: robotoslab, sans-serif;
+
+// stylelint-disable-next-line
+$ta_jp_font: IQOS, sans-serif;
+// stylelint-disable-next-line
+$arial_font: Arial, sans-serif;
+// stylelint-disable-next-line
+$taste_advisor_font: NotoSans, sans-serif;
+// stylelint-disable-next-line
+$experience_title_font: RobotoSlab, sans-serif;
+// stylelint-disable-next-line
+$experience_content_font: Roboto, sans-serif;
+// stylelint-disable-next-line
+$roboto_slab_font: RobotoSlab, sans-serif;
+// stylelint-disable-next-line
+$roboto_font: Roboto, sans-serif;
+// stylelint-disable-next-line
+$helvetica_font: helveticaneueltcyr, sans-serif;
+
+$noto-sans-jp-font: NotoSansJP, sans-serif;
+
+$noto-sans-arabic-font: NotoSansArabic, helveticaneueltcyr;
+
+$iqos-greek-font: IQOSGreek, sans-serif;
+
+$kiosk-font: wine_kiosk-font, sans-serif;
+
+// stylelint-disable-next-line
+$haim_font: Haim, sans-serif;
+
+$wine-sorts: (
+  'white_experience': $white-dark-experience,
+  'white-dark_experience': $white-deep-dark-experience,
+  'sparkling_experience': $sparkling-dark-experience,
+  'sparkling-dark_experience': $sparkling-deep-dark-experience,
+  'rose_experience': $rose-dark-experience,
+  'rose-dark_experience': $rose-deep-dark-experience,
+  'sweet_experience': $sweet-dark-experience,
+  'sweet-dark_experience': $sweet-deep-dark-experience,
+  'red_experience': $red-dark-experience,
+  'red-dark_experience': $red-deep-dark-experience,
+);
+
+$ta-heets-v2-font: IQOS, sans-serif;
+
+// FONTS
+.roboto-slab-font {
+  font-family: $roboto_slab_font !important;
+}
+
+.roboto-font {
+  font-family: $roboto_font !important;
+}
+
+.ta-jp-font {
+  font-family: $ta_jp_font !important;
+
+  &:lang(ja) {
+    font-family: $noto-sans-jp-font !important;
+  }
+
+  &:lang(el) {
+    font-family: $iqos-greek-font !important;
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.no-underline {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+// FONTS
+
+/*  TasteAdvisor style-guide  */
+
+.taste-advisor-font {
+  font-family: $taste_advisor_font;
+  -webkit-font-smoothing: antialiased;
+
+  &:lang(ar-eg) {
+    font-family: $noto-sans-arabic-font;
+  }
+
+  &:lang(ar) {
+    font-family: $noto-sans-arabic-font;
+  }
+}
+
+.taste-advisor-h1 {
+  @extend .taste-advisor-font;
+
+  font-size: 50px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-h1_1 {
+  @extend .taste-advisor-font;
+
+  font-size: 24px;
+  line-height: 33px;
+  color: $color-ta-grey;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: 40px;
+    line-height: 54px;
+  }
+}
+
+.taste-advisor-h2 {
+  @extend .taste-advisor-font;
+
+  font-size: 40px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-h3 {
+  @extend .taste-advisor-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 41px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-h3_1 {
+  @extend .taste-advisor-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-h4 {
+  @extend .taste-advisor-font;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  color: $color-ta-black;
+  letter-spacing: 3.15px;
+}
+
+.taste-advisor-h5 {
+  @extend .taste-advisor-font;
+
+  font-size: 6px;
+  font-weight: 300;
+  line-height: 7px;
+  color: $color-ta-grey;
+  letter-spacing: 1.2px;
+}
+
+.taste-advisor-h6 {
+  @extend .taste-advisor-font;
+
+  font-size: 6px;
+  font-weight: bold;
+  line-height: 7px;
+  color: $color-ta-grey;
+  letter-spacing: 1.2px;
+}
+
+.taste-advisor-h7 {
+  @extend .taste-advisor-font;
+
+  font-size: 8px;
+  line-height: 10px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-h8 {
+  @extend .taste-advisor-font;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  color: $color-ta-black;
+  text-transform: uppercase;
+  letter-spacing: 3.14px;
+}
+
+.taste-advisor-h8-regular {
+  @extend .taste-advisor-font;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  color: $color-ta-black;
+  letter-spacing: 3.14px;
+}
+
+.taste-advisor-h9 {
+  @extend .taste-advisor-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 27px;
+  color: $color-ta-black;
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-size: 14px;
+    line-height: 12px;
+  }
+}
+
+.taste-advisor-h10 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  line-height: 25px;
+  color: $color-ta-black;
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+.taste-advisor-p1 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-weight: 100;
+  color: $color-ta-black;
+}
+
+.taste-advisor-p1_1 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 25px;
+  color: $color-ta-black;
+}
+
+.taste-advisor-p1_2 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  color: $color-ta-grey !important;
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.taste-advisor-p1_3 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  color: $color-ta-grey !important;
+}
+
+.taste-advisor-p2 {
+  @extend .taste-advisor-font;
+
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 18px;
+  color: $color-ta-black;
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-weight: 300;
+  }
+}
+
+.taste-advisor-p3 {
+  @extend .taste-advisor-font;
+
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 18px;
+  color: $color-ta-black;
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-weight: 300;
+  }
+}
+
+.taste-advisor-p4 {
+  @extend .taste-advisor-font;
+
+  font-size: 10px;
+  font-weight: 100;
+  line-height: 14px;
+  color: $color-ta-black;
+}
+
+.taste-advisor-p5 {
+  @extend .taste-advisor-font;
+
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 12px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-p6 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 25px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-p6_2 {
+  @extend .taste-advisor-font;
+
+  font-size: 7px;
+  font-weight: bold;
+  line-height: 8px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-p7 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: $color-ta-grey;
+
+  @media screen and (min-width: $breakpoint-small) {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+.taste-advisor-p8 {
+  @extend .taste-advisor-font;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  color: $color-ta-black;
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.taste-advisor-c1 {
+  @extend .taste-advisor-font;
+
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 12px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-c2 {
+  @extend .taste-advisor-font;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 12px;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-c2_1 {
+  @extend .taste-advisor-font;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: $color-ta-grey;
+}
+
+.taste-advisor-c3 {
+  @extend .taste-advisor-font;
+
+  font-size: 26px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 30px;
+  color: $color-ta-grey;
+  letter-spacing: 3.15px;
+
+  @media (max-width: $breakpoint-medium) {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  @media (max-width: $breakpoint-mobile-large) {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.taste-advisor-c4 {
+  @extend .taste-advisor-font;
+
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 27.25px;
+  color: #fff;
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 19px;
+  }
+}
+
+.taste-advisor-c5 {
+  @extend .taste-advisor-font;
+
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 19px;
+  }
+}
+
+.taste-advisor-c6 {
+  @extend .taste-advisor-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  color: $color-ta-blue-black;
+  letter-spacing: 0.22em;
+}
+
+.taste-advisor-c7 {
+  @extend .taste-advisor-font;
+
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 41px;
+  color: #101010;
+  letter-spacing: 0.02em;
+}
+
+.taste-advisor-c8 {
+  @extend .taste-advisor-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 19px;
+  color: #666;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.taste-advisor-c9 {
+  @extend .taste-advisor-font;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 18px;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.taste-advisor-c10 {
+  @extend .taste-advisor-font;
+
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 34px;
+  color: #fff;
+  text-align: center;
+}
+
+.taste-advisor-c11 {
+  @extend .taste-advisor-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    line-height: 10px;
+  }
+}
+
+.taste-advisor-x1 {
+  font-family: $arial_font;
+  font-size: 30px;
+  color: $white;
+  text-transform: uppercase;
+
+  @media (max-width: $breakpoint-mobile-large) {
+    font-size: 15px;
+  }
+}
+
+// -------- TA IQOS4 --------
+
+.ta-jp-h1 {
+  @extend .ta-jp-font;
+
+  font-size: 50px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 76.6px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 31px;
+  }
+
+  &.storybook-mob {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 31px;
+  }
+}
+
+.ta-jp-h1-bold {
+  @extend .ta-jp-h1;
+
+  font-weight: bold;
+}
+
+.ta-jp-h2 {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 61px;
+}
+
+.ta-jp-h2-1 {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 61px;
+
+  @media screen and (max-width: 833px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.ta-jp-h3-text {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 61.28px;
+  color: $color-iqos-brand-slate;
+
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+    line-height: 27.57px;
+  }
+}
+
+.ta-jp-h5-text {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20.64px;
+  color: $color-iqos-brand-slate;
+
+  @media screen and (max-width: 767px) {
+    font-size: 15px;
+    line-height: 22.98px;
+  }
+}
+
+.ta-jp-h4-text-bold {
+  @extend .ta-jp-font;
+
+  font-size: 27px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 33.26px;
+  color: $color-iqos-brand-turquoise;
+
+  @media screen and (max-width: 767px) {
+    font-size: 13px;
+    line-height: 14.85px;
+  }
+}
+
+.ta-jp-h1-text-bold {
+  @extend .ta-jp-font;
+
+  font-style: normal;
+  font-weight: bold;
+  color: $color-iqos-brand-slate;
+
+  @media screen and (max-width: 767px) {
+    font-size: 60px;
+    line-height: 91.92px;
+  }
+}
+
+.ta-jp-h2-bold {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 61px;
+}
+
+.ta-jp-h2-bold-1 {
+  @extend .ta-jp-font;
+
+  font-size: 100px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 156px;
+}
+
+.ta-jp-h2-2 {
+  @extend .ta-jp-font;
+
+  font-size: 35px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 53.62px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 24.51px;
+  }
+
+  &.storybook-mob {
+    font-size: 16px;
+    line-height: 24.51px;
+  }
+}
+
+.ta-jp-h3-japan {
+  @extend .ta-jp-font;
+
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 48px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 24.51px;
+  }
+
+  &.storybook-mob {
+    font-size: 16px;
+    line-height: 24.51px;
+  }
+}
+
+.ta-jp-h3 {
+  @extend .ta-jp-font;
+
+  font-size: 35px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 54px;
+}
+
+.ta-jp-h3-bold {
+  @extend .ta-jp-font;
+
+  font-size: 35px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 48px;
+}
+
+.ta-jp-h3-1-bold {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.ta-jp-h4 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 37px;
+}
+
+.ta-jp-h4_2 {
+  @extend .ta-jp-h4;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 22.98px;
+  }
+
+  &.storybook-mob {
+    font-size: 15px;
+    line-height: 22.98px;
+  }
+}
+
+.ta-jp-h4_3 {
+  @extend .ta-jp-font;
+
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 92px;
+
+  @media screen and (max-width: $breakpoint-small-start) {
+    font-size: 30px;
+    line-height: 48px;
+  }
+}
+
+.ta-jp-h4_3-bold {
+  @extend .ta-jp-h4_3;
+
+  font-weight: bold;
+}
+
+.ta-jp-h4-bold {
+  @extend .ta-jp-h4;
+
+  font-weight: bold;
+}
+
+.ta-jp-h4_2-bold {
+  @extend .ta-jp-h4_2;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    line-height: 19.5px;
+  }
+
+  &.storybook-mob {
+    line-height: 19.5px;
+  }
+}
+
+.ta-jp-h4_4 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 37px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}
+
+.ta-jp-h5 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 37px;
+}
+
+.ta-jp-h6 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+.ta-jp-h6-bold {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.ta-jp-h5-bold {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 125%;
+}
+
+.ta-jp-h5-bold_1 {
+  @extend .ta-jp-font;
+
+  font-size: 22px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 34px;
+}
+
+.ta-jp-p1 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.ta-jp-p1_2 {
+  @extend .ta-jp-p1;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &.storybook-mob {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-p1_3 {
+  @extend .ta-jp-p1;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 23px;
+  }
+}
+
+.ta-jp-p1-bold {
+  @extend .ta-jp-p1;
+
+  font-weight: bold;
+}
+
+.ta-jp-p1-bold_2 {
+  @extend .ta-jp-p1-bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  &.storybook-mob {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-p2 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27.58px;
+}
+
+.ta-jp-p2-bold {
+  @extend .ta-jp-p2;
+
+  font-weight: bold;
+}
+
+.ta-jp-p2-2 {
+  @extend .ta-jp-p2;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.ta-jp-p2-bold {
+  @extend .ta-jp-p2;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-jp-p2-light {
+  @extend .ta-jp-p2;
+
+  font-weight: 300;
+}
+
+.ta-jp-p2-light-2 {
+  @extend .ta-jp-p2-light;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.ta-jp-p2_2 {
+  @extend .ta-jp-p2;
+
+  color: $color-iqos-cta;
+}
+
+.ta-jp-p2_3 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.ta-jp-p3-normal {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24.51px;
+}
+
+.ta-jp-p3-normal-2 {
+  @extend .ta-jp-p3-normal;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+
+  &.storybook-mob {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+}
+
+.ta-jp-p3-normal_1 {
+  @extend .ta-jp-p3-normal;
+
+  color: $color-iqos-cta;
+}
+
+.ta-jp-p3 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.ta-jp-p3-bold {
+  @extend .ta-jp-p3;
+
+  font-weight: bold;
+}
+
+.ta-jp-p3-bold-2 {
+  @extend .ta-jp-p3-bold;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+
+  &.storybook-mob {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+}
+
+.ta-jp-p3_1 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.ta-jp-p3-light {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+}
+
+.ta-jp-p4 {
+  @extend .taste-advisor-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 18px;
+}
+
+.ta-jp-p4_2 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  line-height: 21.45px;
+}
+
+.ta-jp-p4_2_2 {
+  @extend .ta-jp-p4_2;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  &.storybook-mob {
+    font-size: 9px;
+    line-height: 10px;
+  }
+}
+
+.ta-jp-p4_2-light {
+  @extend .ta-jp-p4_2_2;
+
+  font-weight: 300;
+}
+
+.ta-jp-p4_2_3 {
+  @extend .ta-jp-p4_2;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 13.79px;
+  }
+
+  &.storybook-mob {
+    font-size: 9px;
+    line-height: 13.79px;
+  }
+}
+
+.ta-jp-p4_3 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  line-height: 16.8px;
+}
+
+.ta-jp-p4_3_1 {
+  @extend .ta-jp-p4_3;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 13.79px;
+  }
+
+  &.storybook-mob {
+    font-size: 9px;
+    line-height: 13.79px;
+  }
+}
+
+.ta-jp-p4_2-bold {
+  @extend .ta-jp-p4_2;
+
+  font-weight: bold;
+}
+
+.ta-jp-p4_2-bold-2 {
+  @extend .ta-jp-p4_2-bold;
+
+  font-size: 9px;
+  line-height: 13.79px;
+}
+
+.ta-jp-p4-iqos {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 15px;
+}
+
+.ta-jp-p4-bold {
+  @extend .taste-advisor-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 18px;
+}
+
+.ta-jp-p5_2 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27.58px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-jp-p5_3 {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+
+.ta-jp-p5 {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 7px;
+  letter-spacing: 1.2px;
+}
+
+.ta-jp-p5-2 {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 11px;
+  }
+
+  &.storybook-mob {
+    font-size: 7px;
+    line-height: 11px;
+  }
+}
+
+.ta-jp-p5-2-light {
+  @extend .ta-jp-p5-2;
+
+  font-weight: 300;
+}
+
+.ta-jp-p5-light {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 7px;
+}
+
+.ta-jp-p5-bold {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 7px;
+}
+
+.ta-jp-p5-bold-2 {
+  @extend .ta-jp-p5-bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 10.72px;
+  }
+
+  &.storybook-mob {
+    font-size: 7px;
+    line-height: 10.72px;
+  }
+}
+
+.ta-jp-p6 {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
+}
+
+.ta-jp-p6-bold {
+  @extend .taste-advisor-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.ta-jp-p6-bold-2 {
+  @extend .ta-jp-font;
+
+  font-size: 100px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 153px;
+  letter-spacing: 0.04em;
+
+  @media screen and (max-width: 1193px) {
+    font-size: 65px;
+    line-height: 155.9%;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 40px;
+    line-height: 61.28px;
+    letter-spacing: 0;
+  }
+
+  &.storybook-mob {
+    font-size: 40px;
+    line-height: 61.28px;
+    letter-spacing: 0;
+  }
+}
+
+.ta-jp-p6-bold-3 {
+  @extend .ta-jp-font;
+
+  font-size: 140px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 155.9%;
+  letter-spacing: 0.04em;
+
+  @media screen and (max-width: 1193px) {
+    font-size: 65px;
+    line-height: 155.9%;
+  }
+
+  @media screen and (max-width: 833px) {
+    font-size: 50px;
+    line-height: 77px;
+  }
+}
+
+.ta-jp-p7 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 120%;
+}
+
+.ta-jp-p7-bold {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 120%;
+}
+
+.ta-jp-p8 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 80%;
+}
+
+.ta-jp-p8_2 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 21px;
+  color: $color-iqos-cta;
+}
+
+.ta-jp-p8_2_1 {
+  @extend .ta-jp-p8_2;
+
+  @media (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-p8_3 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 31px;
+  color: $color-iqos-cta;
+}
+
+.ta-jp-p8-bold {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 80%;
+}
+
+.ta-jp-tab-h1-bold {
+  @extend .ta-jp-font;
+
+  @media (min-width: $breakpoint-small-end) and (max-width: $breakpoint-large) {
+    font-size: 65px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 101.34px;
+  }
+}
+
+.ta-jp-tab-h3 {
+  @extend .ta-jp-font;
+
+  @media (min-width: $breakpoint-small-end) and (max-width: $breakpoint-large) {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 61px;
+  }
+}
+
+.ta-jp-tab-h3-1 {
+  @extend .ta-jp-font;
+
+  @media (min-width: $breakpoint-small-end) and (max-width: $breakpoint-large) {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 53.62px;
+  }
+}
+
+.ta-jp-tab-h4 {
+  @extend .ta-jp-font;
+
+  @media (min-width: $breakpoint-small-end) and (max-width: $breakpoint-large) {
+    font-size: 35px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 54px;
+  }
+}
+
+.ta-jp-tab-h5 {
+  @extend .ta-jp-font;
+
+  @media (min-width: $breakpoint-small-end) and (max-width: $breakpoint-large) {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 37px;
+  }
+}
+
+.ta-jp-tab-p2 {
+  @extend .ta-jp-font;
+
+  @media (min-width: $breakpoint-small-end) and (max-width: $breakpoint-large) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+  }
+}
+
+.ta-jp-mob-h2 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    font-style: normal;
+    line-height: 28px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h2-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 28px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h2-bold-1 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 62px;
+  }
+}
+
+.ta-jp-mob-h3 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h3-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 25px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h3-1-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 23px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h4 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h5 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 16px;
+    color: #000;
+  }
+}
+
+.ta-jp-mob-h4-bold {
+  @extend .ta-jp-mob-h4;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-weight: bold;
+  }
+}
+
+.ta-jp-mob-h5-bold {
+  @extend .ta-jp-mob-h5;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-weight: bold;
+  }
+}
+
+.ta-jp-h4-question {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 36.77px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 19.5px;
+  }
+}
+
+.ta-jp-mob-p1 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-mob-p1-bold {
+  @extend .ta-jp-mob-p1;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-weight: bold;
+  }
+}
+
+.ta-jp-mob-p2 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 10px;
+    line-height: 15px;
+  }
+}
+
+.ta-jp-mob-p3 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 15px;
+  }
+}
+
+.ta-jp-mob-p3_1 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-mob-p3_2 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-mob-p2-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+  }
+}
+
+.ta-jp-mob-p3-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 15px;
+  }
+}
+
+.ta-jp-mob-p4 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    font-weight: normal;
+    line-height: 10px;
+  }
+}
+
+.ta-jp-mob-p4-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 12px;
+  }
+}
+
+.ta-jp-mob-p4_2 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 10px;
+  }
+}
+
+.ta-jp-mob-p4_2-bold {
+  @extend .ta-jp-mob-p4_2;
+
+  font-weight: bold;
+}
+
+.ta-jp-mob-p4_3 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    font-weight: normal;
+    line-height: 11px;
+  }
+}
+
+.ta-jp-mob-p5 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    font-weight: normal;
+    line-height: 7px;
+  }
+}
+
+.ta-jp-mob-p5-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    font-weight: bold;
+    line-height: 10px;
+  }
+}
+
+.ta-jp-mob-p6 {
+  @extend .taste-advisor-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-mob-p6-bold {
+  @extend .taste-advisor-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-mob-p7 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 16px;
+  }
+}
+
+.ta-jp-mob-p7-bold {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 11px;
+  }
+}
+
+.ta-jp-mob-p8 {
+  @extend .taste-advisor-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    font-weight: 300;
+    line-height: 10px;
+  }
+}
+
+.ta-jp-mob-c1 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-jp-mob-c2 {
+  @extend .ta-jp-font;
+
+  @media screen and (max-width: 960px) {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 25px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+  }
+}
+
+.ta-iqos4-global-p4 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  line-height: 21px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 14px;
+  }
+}
+
+.ta-iqos4-global-p4-bold {
+  @extend .ta-iqos4-global-p4;
+
+  font-weight: bold;
+}
+
+// -------- TA IQOS3 --------
+
+.ta-pmi3-h1 {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 61px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+.ta-pmi3-h1-bold {
+  @extend .ta-pmi3-h1;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h1_2-bold {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 48px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 22.54px;
+  }
+}
+
+.ta-pmi3-h2 {
+  @extend .ta-jp-font;
+
+  font-size: 35px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 54px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.ta-pmi3-h2_1 {
+  @extend .ta-jp-font;
+
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 46px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.ta-pmi3-h2_2 {
+  @extend .ta-jp-font;
+
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 48px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.ta-pmi3-h2-bold {
+  @extend .ta-pmi3-h2;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h2_2-bold {
+  @extend .ta-pmi3-h2_2;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h3 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-pmi3-h3-bold {
+  @extend .ta-pmi3-h3;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.ta-pmi3-h3_1 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 37px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 22px;
+  }
+}
+
+.ta-pmi3-h3_2 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 20.35px;
+  }
+}
+
+.ta-pmi3-h3_2-bold {
+  @extend .ta-pmi3-h3_2;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h3_3 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.ta-pmi3-h3-bold_3 {
+  @extend .ta-pmi3-h3_3;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h3_4 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 37px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 31px;
+  }
+}
+
+.ta-pmi3-h3-bold_4 {
+  @extend .ta-pmi3-h3_4;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h3_5 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 32px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.ta-pmi3-h3-bold_5 {
+  @extend .ta-pmi3-h3_5;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h4 {
+  @extend .ta-jp-font;
+
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 42px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.ta-pmi3-h4-bold {
+  @extend .ta-pmi3-h4;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h4_2 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-pmi3-h4_2-bold {
+  @extend .ta-pmi3-h4_2;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 20.35px;
+  }
+}
+
+.ta-pmi3-h4_3 {
+  @extend .ta-jp-font;
+
+  font-size: 48px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 56px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-medium) {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.ta-pmi3-h4-bold_3 {
+  @extend .ta-pmi3-h4_3;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h5-bold {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 32px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.ta-pmi3-p1 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.ta-pmi3-p1_2 {
+  @extend .ta-jp-font;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+  color: $color-iqos-cta;
+
+  @media screen and (min-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.ta-pmi3-p1-bold {
+  @extend .ta-pmi3-p1;
+
+  font-weight: bold;
+}
+
+/* stylelint-disable-next-line no-duplicate-selectors */
+.ta-pmi3-p1_2 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-pmi3-p1_arial {
+  @extend .ta-pmi3-p1_2;
+
+  font-family: $arial_font !important;
+}
+
+.ta-pmi3-p1_2-bold {
+  @extend .ta-pmi3-p1_2;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p2 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.ta-pmi3-p2-bold {
+  @extend .ta-pmi3-p2;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p2_1 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27.58px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 13.8px;
+  }
+}
+
+.ta-pmi3-p2_1-light {
+  @extend .ta-pmi3-p2_1;
+
+  font-weight: 300;
+}
+
+.ta-pmi3-p2_1-bold {
+  @extend .ta-pmi3-p2_1;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p2_2 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 13.8px;
+  }
+}
+
+.ta-pmi3-p2_3 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.ta-pmi3-p3_3 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 27.58px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.ta-pmi3-p3_3-bold {
+  @extend .ta-pmi3-p3_3;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p2_4 {
+  @extend .ta-pmi3-p2;
+
+  line-height: 24.5px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 24.5px;
+  }
+}
+
+.ta-pmi3-p2_4-bold {
+  @extend .ta-pmi3-p2_4;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p3 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.ta-pmi3-p1_1 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+}
+
+.ta-pmi3-p3-p2 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.ta-pmi3-p3-bold {
+  @extend .ta-pmi3-p3;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p3_1 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+}
+
+.ta-pmi3-p3_1-bold {
+  @extend .ta-pmi3-p3_1;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p3_2 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+  color: $color-iqos-cta;
+}
+
+.ta-pmi3-p3_2-bold {
+  @extend .ta-pmi3-p3_2;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p4 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 9px;
+    line-height: 14px;
+  }
+}
+
+.ta-pmi3-p5 {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    line-height: 12px;
+  }
+}
+
+.ta-pmi3-p5-lighten {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  color: lighten($color-iqos-cta, 40%);
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    line-height: 10px;
+  }
+}
+
+.ta-pmi3-p5-bold {
+  @extend .ta-pmi3-p5;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-p5s {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 10px;
+  }
+}
+
+.ta-pmi3-p5s-bold {
+  @extend .ta-pmi3-p5s;
+
+  font-weight: 700;
+}
+
+.ta-pmi3-p6 {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 10px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 11px;
+  }
+}
+
+.ta-pmi3-p6_1 {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 12px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 10.72px;
+  }
+}
+
+.ta-pmi3-p6_2 {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 7px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 7px;
+  }
+}
+
+.ta-pmi3-p6_2-light {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 12px;
+  color: lighten($color-iqos-cta, 20%);
+  letter-spacing: 1.2px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 10.72px;
+  }
+}
+
+.ta-pmi3-p6-light {
+  @extend .ta-jp-font;
+
+  font-size: 7px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 10.72px;
+  color: lighten($color-iqos-cta, 20%);
+  letter-spacing: 1.2px;
+}
+
+.ta-pmi3-p6-bold {
+  @extend .ta-pmi3-p6;
+
+  font-weight: bold;
+}
+
+.ta-pmi3-h1-bold_2 {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 46px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 34px;
+    line-height: 38px;
+  }
+}
+
+.ta-pmi3-h1-h2-bold {
+  @extend .ta-jp-font;
+
+  font-size: 64px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 72px;
+  color: $color-iqos-cta;
+
+  @media screen and (max-width: $breakpoint-medium) {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 34px;
+    line-height: 38px;
+  }
+}
+
+/*  Experience style-guide  */
+.experience-title-font {
+  font-family: $experience_title_font !important;
+}
+
+.experience-content-font {
+  font-family: $experience_content_font !important;
+}
+
+.experience-font-c1 {
+  @extend .experience-title-font;
+
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.experience-font-h1 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.experience-font-h2 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+}
+
+.experience-font-sh1 {
+  @extend .experience-title-font;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.experience-font-sh2 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  line-height: 23px;
+  color: #000;
+}
+
+.experience-font-sh2-1 {
+  @extend .experience-title-font;
+
+  font-size: 15px;
+  line-height: 18px;
+  color: #000;
+}
+
+.experience-font-sh2-3 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 23px;
+  color: #000;
+}
+
+.experience-font-sh3 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 21px;
+  color: #fff;
+}
+
+.experience-font-sh4 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  line-height: 20px;
+}
+
+.experience-font-t1 {
+  @extend .experience-content-font;
+
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+}
+
+.experience-font-t1-1 {
+  @extend .experience-content-font;
+
+  font-size: 18px;
+  line-height: 18px;
+  color: #000;
+}
+
+.experience-font-t1-2 {
+  @extend .experience-title-font;
+
+  font-size: 18px;
+  line-height: 20px;
+  color: #999;
+}
+
+.experience-font-t2 {
+  @extend .experience-content-font;
+
+  font-size: 16px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.experience-font-t3 {
+  @extend .experience-content-font;
+
+  font-size: 18px;
+  color: #000;
+}
+
+.experience-font-t4 {
+  @extend .experience-content-font;
+
+  font-size: 16px;
+  color: #000;
+  letter-spacing: -5%;
+}
+
+.experience-font-t5 {
+  @extend .experience-content-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.experience-font-t6 {
+  @extend .experience-title-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.experience-font-t7 {
+  @extend .experience-title-font;
+
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.experience-font-t8 {
+  @extend .experience-title-font;
+
+  font-size: 17px;
+  line-height: 23px;
+  text-transform: uppercase;
+}
+
+.experience-font-t9 {
+  @extend .experience-title-font;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.experience-font-t10 {
+  @extend .experience-title-font;
+
+  font-size: 10px;
+  line-height: 23px;
+  color: #000;
+  text-decoration: underline;
+}
+
+.experience-font-t10-nounderline {
+  @extend .experience-title-font;
+
+  font-size: 10px;
+  line-height: 23px;
+  color: #000;
+}
+
+.experience-font-t11 {
+  @extend .experience-title-font;
+
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.experience-font-t12 {
+  @extend .experience-title-font;
+
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.experience-font-t13 {
+  @extend .experience-title-font;
+
+  font-size: 11px;
+  line-height: 15px;
+  color: #000;
+}
+
+.experience-font-t13-1 {
+  @extend .experience-title-font;
+
+  font-size: 11px;
+  line-height: 15px;
+  color: rgb(0 0 0 / 80%);
+}
+
+.experience-font-t14 {
+  @extend .experience-content-font;
+
+  font-size: 16px;
+  line-height: 15px;
+  color: #000;
+}
+
+.experience-font-t15 {
+  @extend .experience-content-font;
+
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 18px;
+}
+
+// other
+.experience-font-tt01 {
+  @extend .experience-title-font;
+
+  font-size: 13px;
+  line-height: 23px;
+  color: #333;
+}
+
+.experience-font-tt02 {
+  @extend .experience-title-font;
+
+  font-size: 10px;
+  line-height: 14px;
+  color: #000;
+}
+
+$experience-wine-sorts: (
+  'white_dark': $experience-white-dark,
+  'red_dark': $experience-red-dark,
+  'sparkling_dark': $experience-sparkling-dark,
+  'rose_dark': $experience-rose-dark,
+  'sweet_dark': $experience-sweet-dark,
+  'white_deep-dark': $experience-white-deep-dark,
+  'red_deep-dark': $experience-red-deep-dark,
+  'sparkling_deep-dark': $experience-sparkling-deep-dark,
+  'rose_deep-dark': $experience-rose-deep-dark,
+  'sweet_deep-dark': $experience-sweet-deep-dark,
+);
+
+@each $experience_wine_sort, $wine_color in $experience-wine-sorts {
+  .experience-color-#{$experience_wine_sort} {
+    color: $wine_color;
+  }
+}
+
+.experience-p1 {
+  @extend .experience-title-font;
+
+  font-size: 20px;
+  line-height: 26px;
+  color: #000;
+  text-align: center;
+}
+
+.experience-p11 {
+  @extend .experience-content-font;
+
+  font-size: 16px;
+  line-height: 15px;
+  color: #000;
+  text-align: center;
+}
+
+.experience-content-f2 {
+  @extend .experience-title-font;
+
+  font-size: 11px;
+  line-height: 15px;
+  text-align: left;
+}
+
+.experience-content-f3 {
+  @extend .experience-title-font;
+
+  font-size: 16px;
+  line-height: 21px;
+  color: $deep-black;
+}
+
+.experience-content-f4 {
+  @extend .experience-title-font;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.experience-content-f5 {
+  @extend .experience-title-font;
+
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+
+  @media screen and (max-width: 355px) {
+    font-size: 11px;
+  }
+}
+
+.experience-title-f1 {
+  @extend .experience-title-font;
+
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 47px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 375px) {
+    font-size: 30px;
+  }
+}
+
+.experience-title-f2 {
+  @extend .experience-title-font;
+
+  font-size: 19px;
+  line-height: 25px;
+  text-transform: none;
+}
+
+.experience-title-f3 {
+  @extend .experience-title-font;
+
+  font-size: 12px;
+  line-height: 16px;
+  color: $deep-black;
+}
+
+.experience-test {
+  .answer {
+    .text {
+      @extend .experience-font-t7;
+    }
+  }
+}
+
+/* T6 */
+.experience-t6 {
+  font-family: $experience_title_font;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+/* T9 */
+.experience-t9 {
+  font-family: $experience_title_font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+/* T11 */
+.experience-t11 {
+  font-family: $experience_title_font;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 18px;
+
+  @media (min-width: $breakpoint-mobile-large) {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-medium) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 355px) {
+    font-size: 11px;
+  }
+}
+
+.experience-font-p2 {
+  @extend .roboto-font;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+/* T12 */
+.experience-t12 {
+  font-family: $experience_title_font;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 13px;
+
+  @media (min-width: $breakpoint-mobile-large) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile-large) {
+    font-size: 13px;
+  }
+}
+
+.experience-t13 {
+  font-family: $experience_content_font;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+/* H1 */
+.experience-h1 {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+/* SH2 */
+.experience-sh2 {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 23px;
+}
+
+.experience-sh2-bold {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.kiosk_title-f6 {
+  @extend .kiosk-font;
+
+  font-size: 40px;
+  line-height: 40px;
+  color: $kiosk-deep-blue;
+}
+
+.kiosk-font {
+  font-family: $kiosk-font !important;
+}
+
+// Beer
+$beer-sorts: (
+  'pink_primary': $beer-pink-primary,
+  'blue_primary': $beer-blue-primary,
+  'green_primary': $beer-green-primary,
+  'red_primary': $beer-red-primary,
+  'pink_secondary': $beer-pink-secondary,
+  'blue_secondary': $beer-blue-secondary,
+  'green_secondary': $beer-green-secondary,
+  'red_secondary': $beer-red-secondary,
+);
+
+@each $beer_sort, $sort_color in $beer-sorts {
+  .beer-color-#{$beer_sort} {
+    color: $sort_color !important;
+  }
+}
+
+.beer-font-h2 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.beer-font-h3 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  line-height: 23px;
+  text-transform: uppercase;
+}
+
+.beer-font-b1 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+}
+
+.beer-font-p2 {
+  @extend .roboto-font;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.beerKiosk-font-p2 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 18.75px;
+}
+
+.beer-font-p4 {
+  @extend .roboto-slab-font;
+
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.beerKiosk-font-p4 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  line-height: 23.74px;
+}
+
+.beer-font-p6-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.beer-font-p5 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.beer-font-p5_1 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.beer-font-p10 {
+  @extend .roboto-slab-font;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.beer-font-h6 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 31.65px;
+}
+
+.beer-font-p6 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 23.44px;
+}
+
+.beer-font-h5-bold {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 39.57px;
+}
+
+// Bread
+// color names hsould be updated with correct colors
+$bread-sorts: (
+  'brown_primary': $bread-1-primary,
+  'blue_primary': $bread-2-primary,
+  'yellow_primary': $bread-3-primary,
+  'green_primary': $bread-4-primary,
+  'brown_secondary': $bread-1-secondary,
+  'blue_secondary': $bread-2-secondary,
+  'yellow_secondary': $bread-3-secondary,
+  'green_secondary': $bread-4-secondary,
+);
+
+@each $bread_sort, $sort_color in $bread-sorts {
+  .bread-color-#{$bread_sort} {
+    color: $sort_color !important;
+  }
+}
+
+.bread-font-h1 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.bread-font-c1 {
+  @extend .roboto-slab-font;
+
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+.bread-font-sh1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.bread-font-t1 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+}
+
+// Coffee
+$coffee-sorts: (
+  'brown_dark': $coffee-brown-dark,
+  'blue_dark': $coffee-blue-dark,
+  'yellow_dark': $coffee-yellow-dark,
+  'green_dark': $coffee-green-dark,
+  'red_dark': $coffee-red-dark,
+  'brown_deep-dark': $coffee-brown-deep-dark,
+  'blue_deep-dark': $coffee-blue-deep-dark,
+  'yellow_deep-dark': $coffee-yellow-deep-dark,
+  'green_deep-dark': $coffee-green-deep-dark,
+  'red_deep-dark': $coffee-red-deep-dark,
+);
+
+@each $coffee_sort, $sort_color in $coffee-sorts {
+  .coffee-color-#{$coffee_sort} {
+    color: $sort_color !important;
+  }
+}
+
+.coffee-font-c1 {
+  @extend .roboto-slab-font;
+
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.coffee-font-h1 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.coffee-font-h2 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.coffee-font-h2_1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.coffee-font-h5 {
+  @extend .coffee-font-h2;
+}
+
+.coffee-font-sh1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 21px;
+}
+
+.coffee-font-sh2 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  line-height: 23px;
+  color: #000;
+}
+
+.coffee-font-t1 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 23px;
+  color: #000;
+}
+
+.coffee-font-t1-1 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 23px;
+  color: rgb(0 0 0 / 80%);
+}
+
+.coffee-font-t1-2 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.coffee-font-t2 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+}
+
+.coffee-font-t3 {
+  @extend .roboto-font;
+
+  font-size: 18px;
+  color: #000;
+}
+
+.coffee-font-t4 {
+  @extend .roboto-slab-font;
+
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.coffee-font-t6 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #000;
+}
+
+.coffee-font-t6-1 {
+  @extend .coffee-font-t6;
+
+  text-decoration-line: underline;
+  text-transform: uppercase;
+}
+
+.coffee-font-t7 {
+  @extend .roboto-slab-font;
+
+  font-size: 14px;
+  line-height: 23px;
+  color: #000;
+}
+
+.coffee-font-t9 {
+  @extend .roboto-slab-font;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.coffee-font-13px {
+  @extend .roboto-slab-font;
+
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.coffee-font-t11 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.coffee-font-t12 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+}
+
+.coffee-font-t13 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 15px;
+}
+
+.coffee-font-p5 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.coffee-font-p7 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.coffee-font-p10 {
+  @extend .roboto-font;
+
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.text_decoration_none {
+  @extend .roboto-slab-font;
+
+  font-size: 11px;
+  line-height: 23px;
+  color: #000;
+  text-decoration: none;
+}
+
+.decoration_none {
+  text-decoration: none !important;
+}
+
+/******** COFFEE KIOSK GUIDE ********/
+.color-coffeeKiosk-red {
+  color: #bd3020;
+}
+
+.coffee-kiosk-font-h1 {
+  @extend .roboto-slab-font;
+
+  font-size: 8vw; // 70px
+  font-style: normal;
+  font-weight: bold;
+  line-height: 10vw;
+}
+
+.coffee-kiosk-font-h2 {
+  @extend .roboto-slab-font;
+
+  font-size: 6vw; // 55px
+  font-weight: bold;
+  line-height: 6.5vw;
+  text-transform: uppercase;
+}
+
+.coffee-kiosk-font-h2_1 {
+  @extend .roboto-slab-font;
+
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 110px;
+}
+
+.coffee-kiosk-font-h3 {
+  @extend .roboto-slab-font;
+
+  font-size: 3.5vw; // 40px
+  font-weight: normal;
+  line-height: 4.5vw;
+}
+
+.coffee-kiosk-font-h3_1 {
+  @extend .roboto-slab-font;
+
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 66px;
+}
+
+// Finalized
+.coffee-kiosk-font-h4 {
+  @extend .roboto-slab-font;
+
+  font-size: 3.25vw; // 35px
+  font-weight: bold;
+  line-height: 4.25vw;
+}
+
+// Finalized
+.coffee-kiosk-font-h5 {
+  @extend .roboto-slab-font;
+
+  font-size: 3vw; // 30px
+  line-height: 4vw;
+}
+
+// Finalized
+.coffee-kiosk-font-h6 {
+  @extend .roboto-slab-font;
+
+  font-size: 3vw; // 30px
+  font-weight: bold;
+  line-height: 4vw;
+}
+
+.coffee-kiosk-font-h7 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.4vw; // 24px
+  font-weight: bold;
+  line-height: 2.8vw;
+}
+
+.coffee-kiosk-font-h8 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.4vw; // 24px
+  line-height: 2.8vw;
+}
+
+.coffee-kiosk-font-p1 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.25vw; // 20px;
+  line-height: 2.75vw;
+}
+
+.coffee-kiosk-font-p1_1 {
+  @extend .roboto-slab-font;
+
+  font-size: 32px;
+  line-height: 40.96px;
+}
+
+.coffee-kiosk-font-p2 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.25vw; // 20px;
+  font-weight: bold;
+  line-height: 2.75vw;
+}
+
+.coffee-kiosk-font-p3 {
+  @extend .roboto-font;
+
+  font-size: 2.25vw; // 20px;
+  line-height: 2.75vw;
+}
+
+.coffee-kiosk-font-p4 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.25vw; // 20px;
+  font-weight: bold;
+  line-height: 2.75vw;
+}
+
+.coffee-kiosk-font-p4_px {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.coffee-kiosk-font-p5 {
+  @extend .roboto-slab-font;
+
+  font-size: 1.85vw; // 17px;
+  line-height: 2vw;
+}
+
+.coffee-kiosk-font-p5-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.coffee-kiosk-font-p5_2 {
+  @extend .roboto-font;
+
+  font-size: 1.8vw; // 16px;
+  line-height: 2.4vw;
+}
+
+.coffee-kiosk-font-p6 {
+  // TODO
+  @extend .roboto-slab-font;
+}
+
+.coffee-kiosk-font-p7 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.4vw; // 24px
+  line-height: 2.8vw;
+}
+
+.coffee-kiosk-font-p8 {
+  @extend .roboto-slab-font;
+
+  font-size: 1.6vw; // 14px
+  line-height: 1.8vw;
+}
+
+.coffee-kiosk-font-p9 {
+  @extend .roboto-slab-font;
+
+  font-size: 2vw; // 18px;
+  line-height: 2.25vw;
+}
+
+.coffee-kiosk-font-p10 {
+  @extend .roboto-slab-font;
+
+  font-size: 1.35vw; // 12px;
+  line-height: 1.5vw;
+}
+
+.coffee-kiosk-font-p11 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  line-height: 15px;
+}
+
+.coffee-kiosk-font-t23 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+// Wine-Kiosk fonts
+
+.wine-kiosk-font-p7 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.wine-kiosk-font-h6-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 31.65px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+.wine-kiosk-font-p2_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 2.05vw;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.wine-kiosk-font-p2_3 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.wine-kiosk-font-p5-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26.38px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 17px;
+    line-height: 22.42px;
+  }
+}
+
+.wine-kiosk-font-p5-5 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-c3 {
+  @extend .roboto-slab-font;
+
+  font-size: 55px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 73px;
+}
+
+.wine-kiosk-font-c4 {
+  @extend .roboto-slab-font;
+
+  font-size: 22px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 22px;
+}
+
+.wine-kiosk-font-h1 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+
+.wine-kiosk-h1 {
+  @extend .roboto-slab-font;
+
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 35px;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 33px;
+    line-height: 43.52px;
+  }
+}
+
+.wine-kiosk-h2 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 40px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+.wine-kiosk-font-h3 {
+  @extend .roboto-slab-font;
+
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 51px;
+}
+
+.wine-kiosk-font-h3-2 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 35px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 17px;
+    line-height: 22.42px;
+  }
+}
+
+.wine-kiosk-font-h4 {
+  @extend .roboto-slab-font;
+
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 46px;
+}
+
+.wine-kiosk-font-h4_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-h4_3 {
+  @extend .roboto-slab-font;
+
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 51px;
+}
+
+.wine-kiosk-font-h4-mobile {
+  @extend .roboto-slab-font;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+
+.wine-kiosk-font-h5 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-h5_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-h6 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.wine-kiosk-font-h6_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.wine-kiosk-font-h6_3 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-h7 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.wine-kiosk-font-h7_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 40px;
+}
+
+.wine-kiosk-font-t1-1 {
+  @extend .roboto-font;
+
+  font-size: 18px;
+  line-height: 18px;
+  color: #000;
+}
+
+.wine-kiosk-font-t1 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 23px;
+  color: #000;
+}
+
+.wine-kiosk-font-t2 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.wine-kiosk-font-t3 {
+  @extend .roboto-font;
+
+  font-size: 18px;
+  color: #000;
+}
+
+.wine-kiosk-font-t15 {
+  @extend .roboto-slab-font;
+
+  font-size: 35px;
+  font-weight: normal;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-t16 {
+  @extend .roboto-slab-font;
+
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-t17 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.wine-kiosk-font-t18 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.wine-kiosk-font-t18-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 32px;
+}
+
+.wine-kiosk-font-t19 {
+  @extend .roboto-slab-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.wine-kiosk-font-t19-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.wine-kiosk-font-mobile-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.wine-kiosk-font-mobile-2 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.wine-kiosk-font-t20 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #fff;
+}
+
+.wine-kiosk-font-t21 {
+  @extend .roboto-font;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+.wine-kiosk-font-p6-1 {
+  @extend .roboto-font;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 23.44px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 17px;
+    line-height: 22.42px;
+  }
+}
+
+.wine-kiosk-font-t21-bold {
+  @extend .roboto-font;
+
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.wine-kiosk-font-t21_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.wine-kiosk-font-p1-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 13.19px;
+}
+
+.wine-kiosk-font-p1-2 {
+  @extend .roboto-slab-font;
+
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18.46px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 13.19px;
+  }
+}
+
+.wine-kiosk-font-p1-1-normal {
+  @extend .roboto-slab-font;
+
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 13.19px;
+}
+
+.wine-kiosk-font-p8-1 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21.09px;
+}
+
+.wine-kiosk-font-h3-1 {
+  @extend .roboto-font;
+
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 22.42px;
+}
+
+.wine-kiosk-font-p3-1 {
+  @extend .roboto-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22.42px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 21.09px;
+  }
+}
+
+.wine-kiosk-font-h3-1-bold {
+  @extend .wine-kiosk-font-h3-1;
+
+  font-weight: bold;
+}
+
+.wine-kiosk-font-t22 {
+  @extend .roboto-slab-font;
+
+  font-size: 30px;
+  font-weight: normal;
+  line-height: 35px;
+}
+
+.wine-kiosk-font-t23 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+.wine-kiosk-font-t24 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+}
+
+.wine-kiosk-font-t25 {
+  @extend .roboto-slab-font;
+
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.wine-kiosk-font-p1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.modal-content .wine-kiosk-font-p1 {
+  @extend .roboto-slab-font;
+
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.wine-kiosk-font-p1_2 {
+  @extend .roboto-slab-font;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.wine-kiosk-font-p2 {
+  @extend .roboto-slab-font;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 19px;
+  color: #000;
+}
+
+.wine-kiosk-font-p3 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+  color: #000;
+}
+
+.wine-kiosk-font-p3_2 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+}
+
+.wine-kiosk-font-p5 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.wine-kiosk-font-p5-2 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 22.42px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 17.58px;
+  }
+}
+
+.wine-kiosk-font-p5-4 {
+  @extend .roboto-slab-font;
+
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 23.74px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+.wine-kiosk-font-p5-3 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22.42px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 23px;
+  }
+}
+
+.wine-kiosk-font-p10 {
+  @extend .roboto-slab-font;
+
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 17.58px;
+}
+
+.wine-kiosk-font-p6 {
+  @extend .roboto-font;
+
+  font-size: 20px;
+  line-height: 23px;
+  color: #000;
+}
+
+.wine-kiosk-font-p8 {
+  @extend .roboto-slab-font;
+
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.wine-kiosk-font-p9 {
+  @extend .roboto-slab-font;
+
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.wine-kiosk-font-c1 {
+  @extend .roboto-slab-font;
+
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 92px;
+}
+
+.wine-kiosk-font-c2 {
+  @extend .roboto-slab-font;
+
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 110%;
+}
+
+.wine-kiosk-font-c5 {
+  @extend .roboto-slab-font;
+
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 128%;
+}
+
+.wine-kiosk-font-c6 {
+  @extend .roboto-slab-font;
+
+  font-size: 32px;
+  line-height: 128%;
+}
+
+.wine-kiosk-font-c7 {
+  @extend .roboto-slab-font;
+
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 66px;
+  letter-spacing: 0.05em;
+}
+
+.wine-kiosk-font-c8 {
+  @extend .roboto-slab-font;
+
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 79px;
+}
+
+.wine-kiosk-font-p2_4 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 18.75px;
+}
+
+.wine-kiosk-font-p2_5 {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 18.75px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 15px;
+    line-height: 17.58px;
+  }
+}
+
+.wine-kiosk-link {
+  color: black;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+    }
+  }
+}
+
+.euro {
+  font-size: 80px;
+  line-height: 96px;
+  color: #c4c4c4;
+}
+
+.black {
+  color: #000;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.color-black {
+  color: #000;
+}
+
+.color-gray {
+  color: #b8b8b8 !important;
+}
+
+.color-white {
+  color: $color-ta-white !important;
+}
+
+$font-sizes: (67);
+
+@each $data in $font-sizes {
+  .font-size-#{$data}percent {
+    font-size: math.percentage($data * 0.01);
+  }
+}
+
+.text-color-white {
+  color: $white;
+}
+
+.bold-important {
+  font-weight: bold !important;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.experience-link {
+  color: black;
+
+  &:hover {
+    color: #808080;
+  }
+
+  a,
+  div {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #808080;
+      text-decoration: none;
+    }
+  }
+}
+
+.letter-spacing-zero {
+  letter-spacing: 0;
+}
+
+.color-coffeKiosk-price {
+  color: #c83d35;
+}
+
+.color-wineKiosk-price {
+  color: $deep-black;
+}
+
+.color-wineKiosk-price-discounted {
+  color: $red-wine-kiosk;
+}
+
+.wineKiosk-price-orignal-linethrough {
+  color: #666;
+  text-decoration: line-through;
+}
+
+.color-beerKiosk-price {
+  color: $deep-black;
+}
+
+.text-uppercase-mob {
+  @media screen and (max-width: $breakpoint-small) {
+    text-transform: uppercase;
+  }
+}
+
+.text-transform-none {
+  text-transform: none;
+}
+
+/** Taste Advisor VEEV Fonts **/
+
+.ta-veev-h1 {
+  @extend .ta-jp-font;
+
+  font-size: 45px;
+  line-height: 60px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 20px;
+    line-height: 30.64px;
+  }
+}
+
+.ta-veev-h1-bold {
+  @extend .ta-veev-h1;
+
+  font-weight: bold;
+}
+
+.ta-veev-h2 {
+  @extend .ta-jp-font;
+
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 48.2px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 18px;
+    line-height: 27.58px;
+  }
+}
+
+.ta-veev-h3 {
+  @extend .ta-jp-font;
+
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 43.64px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 16px;
+    line-height: 24.51px;
+  }
+}
+
+.ta-veev-h4 {
+  @extend .ta-jp-font;
+
+  font-size: 30px;
+  line-height: 45.96px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+.ta-veev-h5 {
+  @extend .ta-jp-font;
+
+  font-size: 24px;
+  line-height: 30px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 16px;
+    line-height: 24.51px;
+  }
+}
+
+.ta-veev-h5-bold {
+  @extend .ta-veev-h5;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small) {
+    line-height: 19px;
+  }
+}
+
+.ta-veev-p1 {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  line-height: 26px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-veev-p1-bold {
+  @extend .ta-veev-p1;
+
+  font-weight: bold;
+}
+
+.ta-veev-p2 {
+  @extend .ta-jp-font;
+
+  font-size: 18px;
+  line-height: 23px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.ta-veev-p2-bold {
+  @extend .ta-veev-p2;
+
+  font-weight: bold;
+}
+
+.ta-veev-p2-light {
+  @extend .ta-veev-p2;
+
+  font-weight: 300;
+}
+
+.ta-veev-p3 {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  line-height: 24.51px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 10px;
+    line-height: 15.32px;
+  }
+}
+
+.ta-veev-p3-btn {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  line-height: 24.51px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 14px;
+    line-height: 21.45px;
+  }
+}
+
+.ta-veev-p3-bold-no-resize {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24.51px;
+}
+
+.ta-veev-p3-bold {
+  @extend .ta-veev-p3;
+
+  font-weight: bold;
+}
+
+.ta-veev-p4 {
+  @extend .ta-jp-font;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 9px;
+    line-height: 10px;
+  }
+}
+
+.ta-veev-p4-bold {
+  @extend .ta-veev-p4;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small) {
+    line-height: 13.79px;
+  }
+}
+
+.ta-veev-p4-light {
+  @extend .ta-veev-p4;
+
+  font-weight: 300;
+}
+
+.ta-veev-p5 {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  line-height: 16px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 7px;
+    line-height: 10.72px;
+  }
+}
+
+.ta-veev-p5-2 {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  line-height: 14.4px;
+}
+
+.ta-veev-p5-2-1-bold {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+
+  @media screen and (max-width: 850px) {
+    font-size: 11px;
+    line-height: 16.85px;
+  }
+}
+
+.ta-veev-p5-3-bold {
+  @extend .ta-jp-font;
+
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16.85px;
+}
+
+.ta-veev-p5-4-bold {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 10px;
+  }
+}
+
+.ta-veev-p5-light {
+  @extend .ta-veev-p5;
+
+  font-weight: 300;
+}
+
+.ta-veev-p5-2-light {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 9px;
+  }
+}
+
+.ta-veev-p5-bold {
+  @extend .ta-veev-p5;
+
+  font-weight: bold;
+  line-height: 14px;
+}
+
+.ta-veev-p6 {
+  @extend .ta-jp-font;
+
+  font-size: 10px;
+  line-height: 15.32px;
+}
+
+.ta-veev-p7 {
+  @extend .ta-jp-font;
+
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 12.26px;
+}
+
+.ta-veev-p7-bold {
+  @extend .ta-veev-p7;
+
+  font-weight: 700;
+}
+
+.ta-veev-p8 {
+  @extend .ta-jp-font;
+
+  font-size: 15px;
+  line-height: 17px;
+}
+
+.ta-stories-h2 {
+  @extend .roboto-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 35px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.ta-stories-h4 {
+  @extend .roboto-font;
+
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+}
+
+.ta-stories-p {
+  @extend .roboto-font;
+
+  font-size: 16px;
+  line-height: 19px;
+  color: #000;
+}
+
+.haim-font {
+  font-family: $haim_font !important;
+}
+
+.haim-h1-warning {
+  @extend .haim-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 48.28px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 22.54px;
+  }
+}
+
+.haim-h1 {
+  @extend .haim-font;
+
+  font-size: 40px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 48.28px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 18px;
+    line-height: 22.54px;
+  }
+}
+
+// HEETS v2 font
+
+.ta-heets-v2-font {
+  font-family: $ta-heets-v2-font !important;
+  font-weight: 400;
+}
+
+.ta-heets-v2-h1 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 70px;
+  font-weight: bold;
+  line-height: normal;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 45px;
+    line-height: 56px;
+  }
+
+  &.storybook-mob {
+    font-size: 45px;
+    line-height: 56px;
+  }
+}
+
+.ta-heets-v2-h2 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 77px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 35px;
+    line-height: 54px;
+  }
+
+  &.storybook-mob {
+    font-size: 35px;
+    line-height: 54px;
+  }
+}
+
+.ta-heets-v2-h3 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 44px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  &.storybook-mob {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.ta-heets-v2-h3-bold {
+  @extend .ta-heets-v2-h3;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-h4 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 40px;
+  line-height: 50px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  &.storybook-mob {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.ta-heets-v2-h4-bold {
+  @extend .ta-heets-v2-h4;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-h5 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 35px;
+  font-weight: bold;
+  line-height: 42px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &.storybook-mob {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+.ta-heets-v2-h6 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 46px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 21px;
+    line-height: 32px;
+  }
+
+  &.storybook-mob {
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+
+.ta-heets-v2-p1 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 24px;
+  line-height: 34px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &.storybook-mob {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.ta-heets-v2-p1-bold {
+  @extend .ta-heets-v2-p1;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-p2 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 20px;
+  line-height: 27px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &.storybook-mob {
+    font-size: 14px;
+    line-height: normal;
+  }
+}
+
+.ta-heets-v2-p2-bold {
+  @extend .ta-heets-v2-p2;
+
+  font-weight: bold;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    line-height: 16px;
+  }
+
+  &.storybook-mob {
+    line-height: 16px;
+  }
+}
+
+.ta-heets-v2-p3 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 18px;
+  line-height: 28px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-heets-v2-p3-light {
+  @extend .ta-heets-v2-p3;
+
+  font-weight: 300;
+}
+
+.ta-heets-v2-p3-bold {
+  @extend .ta-heets-v2-p3;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-p4 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 16px;
+  line-height: 25px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 11px;
+    line-height: 17px;
+  }
+
+  &.storybook-mob {
+    font-size: 11px;
+    line-height: 17px;
+  }
+}
+
+.ta-heets-v2-p4-bold {
+  @extend .ta-heets-v2-p4;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-p5 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 14px;
+  line-height: 18px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  &.storybook-mob {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+.ta-heets-v2-p5-bold {
+  @extend .ta-heets-v2-p5;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-p6 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 12px;
+  line-height: 18px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 8px;
+    line-height: 12px;
+  }
+
+  &.storybook-mob {
+    font-size: 8px;
+  }
+}
+
+.ta-heets-v2-p6-bold {
+  @extend .ta-heets-v2-p6;
+
+  font-weight: bold;
+}
+
+.ta-heets-v2-p7 {
+  @extend .ta-heets-v2-font;
+
+  font-size: 10px;
+  line-height: 15px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 7px;
+    line-height: 10.72px;
+  }
+
+  &.storybook-mob {
+    font-size: 7px;
+  }
+}
+
+.ta-heets-v2-p7-bold {
+  @extend .ta-heets-v2-p7;
+
+  font-weight: bold;
+}
+
+.ta-ecom-font {
+  font-family: $ta_jp_font;
+  font-weight: normal;
+  line-height: 'auto';
+
+  &:lang(ja) {
+    font-family: $noto-sans-jp-font !important;
+  }
+
+  &:lang(el) {
+    font-family: $iqos-greek-font !important;
+  }
+}
+
+.ta-ecom-h1 {
+  @extend .ta-ecom-font;
+
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 72px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  &.storybook-mob {
+    font-size: 34px;
+    line-height: 38px;
+  }
+}
+
+.ta-ecom-h2 {
+  @extend .ta-ecom-font;
+
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 56px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  &.storybook-mob {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.ta-ecom-h3 {
+  @extend .ta-ecom-font;
+
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+.ta-ecom-h4 {
+  @extend .ta-ecom-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 37px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 31px;
+  }
+
+  &.storybook-mob {
+    font-size: 20px;
+  }
+}
+
+.ta-ecom-h5 {
+  @extend .ta-ecom-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &.storybook-mob {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.ta-ecom-h5-v2 {
+  @extend .ta-ecom-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+}
+
+.ta-ecom-h6 {
+  @extend .ta-ecom-font;
+
+  font-size: 20px;
+}
+
+.ta-ecom-p1 {
+  @extend .ta-ecom-font;
+
+  font-size: 18px;
+}
+
+.ta-ecom-p1_1 {
+  @extend .ta-ecom-font;
+
+  font-size: 20px;
+  line-height: 26px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.ta-ecom-p1-bold {
+  @extend .ta-ecom-p1;
+
+  font-weight: bold;
+}
+
+.ta-ecom-p2 {
+  @extend .ta-ecom-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.ta-ecom-p3 {
+  @extend .ta-ecom-font;
+
+  font-size: 16px;
+  line-height: 25px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  &.storybook-mob {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.ta-ecom-p3-bold {
+  @extend .ta-ecom-p3;
+
+  font-weight: bold;
+}
+
+.ta-ecom-p4 {
+  @extend .ta-ecom-font;
+
+  font-size: 14px;
+  line-height: 21px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-ecom-p4-bold {
+  @extend .ta-ecom-p4;
+
+  font-weight: bold;
+}
+
+.ta-ecom-p5 {
+  @extend .ta-ecom-font;
+
+  font-size: 14px;
+  line-height: 42px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    line-height: 41px;
+  }
+
+  &.storybook-mob {
+    line-height: 41px;
+  }
+}
+
+// VEEV ECOMMERCE
+
+.ta-veev-ecom-font {
+  font-family: $ta_jp_font;
+  font-weight: normal;
+  line-height: 'auto';
+
+  &:lang(ja) {
+    font-family: $noto-sans-jp-font !important;
+  }
+
+  &:lang(el) {
+    font-family: $iqos-greek-font !important;
+  }
+}
+
+.ta-veev-ecom-h1 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 72px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  &.storybook-mob {
+    font-size: 34px;
+    line-height: 38px;
+  }
+}
+
+.ta-veev-ecom-h2 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 56px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  &.storybook-mob {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+.ta-veev-ecom-h3 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 42px;
+}
+
+.ta-veev-ecom-h4 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 37px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 20px;
+    line-height: 31px;
+  }
+
+  &.storybook-mob {
+    font-size: 20px;
+    line-height: 31px;
+  }
+}
+
+.ta-veev-ecom-h7 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 20px;
+  line-height: 34px;
+}
+
+.ta-veev-ecom-h5 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &.storybook-mob {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.ta-veev-ecom-h6 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 20px;
+  line-height: 31px;
+}
+
+.ta-veev-ecom-h6-1 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 20px;
+  line-height: 31px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.ta-veev-ecom-p1 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.ta-veev-ecom-p1-1 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 18px;
+  line-height: 28px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-veev-ecom-p1-bold {
+  @extend .ta-veev-ecom-p1;
+
+  font-weight: bold;
+}
+
+.ta-veev-ecom-p2 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.ta-veev-ecom-p3 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 16px;
+  line-height: 25px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  &.storybook-mob {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.ta-veev-ecom-p3-1 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 16px;
+  line-height: 25px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-veev-ecom-p3-2 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 21.45px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    font-size: 12px;
+    line-height: 18.38px;
+  }
+}
+
+.ta-veev-ecom-p3-bold {
+  @extend .ta-veev-ecom-p3;
+
+  font-weight: bold;
+}
+
+.ta-veev-ecom-p4 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 14px;
+  line-height: 21px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &.storybook-mob {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.ta-veev-ecom-p4-bold {
+  @extend .ta-veev-ecom-p4;
+
+  font-weight: bold;
+}
+
+.ta-veev-ecom-p5 {
+  @extend .ta-veev-ecom-font;
+
+  font-size: 14px;
+  line-height: 42px;
+
+  @media screen and (max-width: $breakpoint-small-end) {
+    line-height: 41px;
+  }
+
+  &.storybook-mob {
+    line-height: 41px;
+  }
+}
+
+.ta-veev-ecom-font-color {
+  color: $color-iqos-veev-brand-slate;
+}
+
+.blends-title-font {
+  @extend .ta-jp-font;
+
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 40px;
+}
+
+.blends-title-font-bold {
+  @extend .blends-title-font;
+
+  font-weight: 700;
+}
+
+.blends-content-font {
+  @extend .ta-jp-font;
+
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+}
+
+.blends-content-font-bold {
+  @extend .blends-content-font;
+
+  font-weight: 700;
+}
+
+.blends-disclaimer-font {
+  @extend .ta-jp-font;
+
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}
+
+.blends-btn-font {
+  @extend .ta-jp-font;
+
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 31px;
+}
