@@ -6,9 +6,12 @@ const issuerPrivateKey = __ISSUER_PRIVATE_KEY__;
 
 const deviceIdInput = byId('device-id');
 const amountInput = byId('amount-received');
+const commissionAmount = byId('commission-amount');
 const creditAmount = byId('credit-amount');
 const creditOutput = byId('credit-output');
 const signedCreditOutput = byId('signed-credit');
+const issuedCommission = byId('issued-commission');
+const issuedCreditAmount = byId('issued-credit-amount');
 const status = byId('status');
 
 function bytesToBase64(bytes) {
@@ -51,7 +54,11 @@ async function copyText(value, label) {
 
 amountInput.addEventListener('input', () => {
   const received = Number(amountInput.value);
-  creditAmount.textContent = `${(Number.isFinite(received) && received > 0 ? Math.round(received * 500) / 100 : 0).toFixed(2)} ETB`;
+  const commission = Number.isFinite(received) && received > 0 ? Math.round(received * 100) / 100 : 0;
+  const credit = Math.round(commission * 5 * 100) / 100;
+  commissionAmount.textContent = `${commission.toFixed(2)} ETB`;
+  creditAmount.textContent = `${credit.toFixed(2)} ETB`;
+  creditOutput.classList.add('hidden');
 });
 
 byId('copy-credit').addEventListener('click', () => copyText(signedCreditOutput.value, 'Balance text'));
@@ -68,6 +75,7 @@ byId('issue-credit').addEventListener('click', async (event) => {
     if (!issuerPrivateKey.trim()) throw new Error('This balance issuer is not configured. Contact your app administrator.');
 
     const amount = Math.round(received * 500) / 100;
+    const commission = Math.round(amount * 20) / 100;
     const date = new Date().toISOString().slice(0, 10);
     const creditId = crypto.randomUUID();
     const payload = `${deviceId}\n${date}\n${creditId}\n${amount}`;
@@ -86,6 +94,8 @@ byId('issue-credit').addEventListener('click', async (event) => {
     const credit = { type: 'BINGO_BALANCE_CREDIT', deviceId, date, creditId, amount };
     const envelope = JSON.stringify({ credit, signature: toBase64Url(new Uint8Array(signature)) });
     signedCreditOutput.value = `BINGO1:${toBase64Url(encoder.encode(envelope))}`;
+    issuedCommission.textContent = `${commission.toFixed(2)} ETB (20%)`;
+    issuedCreditAmount.textContent = `${amount.toFixed(2)} ETB`;
     creditOutput.classList.remove('hidden');
     showStatus('Balance text is ready. Copy it and send it to the customer.', 'success');
   } catch (error) {

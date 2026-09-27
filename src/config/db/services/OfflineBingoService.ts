@@ -277,6 +277,24 @@ export async function getOfflineShop(
   });
 }
 
+/** Replaces the saved offline cartella deck with cards extracted from a PDF. */
+export async function replaceOfflineCartellas(
+  accountId: number,
+  cards: IBingoCard[],
+): Promise<void> {
+  if (cards.length === 0) throw new Error('The PDF does not contain any cartellas.');
+  await withState(accountId, (state) => {
+    if (state.activeGame) {
+      throw new Error('End the current game before replacing the cartellas.');
+    }
+    state.shop.agentShop.cards = cards;
+    state.shop.agentShop.cartella = cards.length;
+    if (state.shop.agentShop.company) {
+      state.shop.agentShop.company.cards = cards;
+    }
+  });
+}
+
 export async function startOfflineGame(
   accountId: number,
   gamePattern: string,

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ChangeEvent } from 'react';
 import {
   useAppDispatch,
   useAppSelector,
@@ -13,7 +13,16 @@ import BingoDashboardCard from '../BingoDashboardCard/BingoDashboardCard';
 import { LOCAL_SESSION } from '../../../../../constants/constants';
 import { isTauri } from '@tauri-apps/api/core';
 import OfflineBalance from '../OfflineBalance/OfflineBalance';
-import { getOfflineDashboardSummary, type OfflineDashboardSummary } from '../../../../../config/db/services/OfflineBingoService';
+import {
+  getOfflineDashboardSummary,
+  getOfflineShop,
+  replaceOfflineCartellas,
+  type OfflineDashboardSummary,
+} from '../../../../../config/db/services/OfflineBingoService';
+import { getCashierBingoShopAPI } from '../../slices/BingoShopSlice';
+import type { IBingoCard } from '../../model/IBingoCard';
+import '../AgentCartella/_CartellaCard.scss';
+import '../AgentCartella/_GridStyle.scss';
 
 type Props = {
   onBackToGame: () => void;
@@ -29,6 +38,11 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
   const dispatch = useAppDispatch();
   const [offlineSummary, setOfflineSummary] = useState<OfflineDashboardSummary | null>(null);
   const [offlineSummaryError, setOfflineSummaryError] = useState('');
+  const [offlineCards, setOfflineCards] = useState<IBingoCard[] | null>(null);
+  const [offlineCardsError, setOfflineCardsError] = useState('');
+  const [offlineCardsMessage, setOfflineCardsMessage] = useState('');
+  const [isImportingCartellas, setIsImportingCartellas] = useState(false);
+  const cartellaFileInput = useRef<HTMLInputElement>(null);
   const offlineSession = isTauri() ? localStorage.getItem(LOCAL_SESSION) : null;
   const offlineAccount = offlineSession
     ? (JSON.parse(offlineSession) as { id: number; shopName: string; username: string })
@@ -43,6 +57,38 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
       setOfflineSummaryError(cause instanceof Error ? cause.message : 'Could not load today’s totals.');
     }
   }, [offlineAccount?.id]);
+
+  const loadOfflineCards = useCallback(async () => {
+    if (!offlineAccount) return;
+    try {
+      const shop = await getOfflineShop(offlineAccount.id);
+      setOfflineCards(shop.agentShop.company?.cards ?? shop.agentShop.cards ?? []);
+      setOfflineCardsError('');
+    } catch (cause) {
+      setOfflineCardsError(cause instanceof Error ? cause.message : 'Could not load cartellas.');
+    }
+  }, [offlineAccount?.id]);
+
+  const handleCartellaPdfUpload = async (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    event.target.value = '';
+    if (!file || !offlineAccount) return;
+    setIsImportingCartellas(true);
+    setOfflineCardsError('');
+    setOfflineCardsMessage('');
+    try {
+      const { extractCartellasFromPdf } = await import('../../utils/extractCartellasFromPdf');
+      const cards = await extractCartellasFromPdf(file);
+      await replaceOfflineCartellas(offlineAccount.id, cards);
+      setOfflineCards(cards);
+      setOfflineCardsMessage(`${cards.length} cartellas imported and saved on this device.`);
+      await dispatch(getCashierBingoShopAPI());
+    } catch (cause) {
+      setOfflineCardsError(cause instanceof Error ? cause.message : 'Could not extract cartellas from this PDF.');
+    } finally {
+      setIsImportingCartellas(false);
+    }
+  };
 
   useEffect(() => {
     if (!offlineAccount) return;
@@ -124,6 +170,7 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
         {offlineSession ? (
           <Tabs
             className="mt-3 w-full min-w-0"
+            onChange={(key) => { if (key === 'cartella' && offlineCards === null) void loadOfflineCards(); }}
             items={[
               {
                 key: 'dashboard',
@@ -139,7 +186,7 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
                       />
                       <BingoDashboardCard
                         bgColor="#BFCDC0"
-                        title="Balance Used Today Net"
+                        title="Balance Used Today Net (20%)"
                         value={offlineSummary?.totalPayIn ?? 0}
                         isShowCurrency
                       />
@@ -165,6 +212,51 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
                 key: 'balance',
                 label: 'Balance',
                 children: <div className="mt-3 w-full max-w-2xl"><OfflineBalance /></div>,
+              },
+              {
+                key: 'cartella',
+                label: 'Cartella',
+                children: (
+                  <div className="mt-3 flex min-w-0 flex-col gap-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <h2 className="text-base font-semibold">Your cartellas</h2>
+                        <p className="text-sm text-gray-600">{offlineCards === null ? 'Loading your saved cartellas…' : `${offlineCards.length} cartellas saved on this device.`}</p>
+                      </div>
+                      <div>
+                        <input
+                          ref={cartellaFileInput}
+                          type="file"
+                          accept="application/pdf,.pdf"
+                          className="hidden"
+                          onChange={handleCartellaPdfUpload}
+                        />
+                        <Button
+                          type="primary"
+                          loading={isImportingCartellas}
+                          onClick={() => cartellaFileInput.current?.click()}
+                          icon={<Icon icon="ic:round-upload" fontSize={20} />}
+                        >
+                          Upload cartella PDF
+                        </Button>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600">Upload a PDF exported from the admin Cartella page. The imported cards replace the saved cartellas.</p>
+                    {offlineCardsError && <Alert type="error" showIcon message={offlineCardsError} />}
+                    {offlineCardsMessage && <Alert type="success" showIcon message={offlineCardsMessage} />}
+                    {offlineCards && offlineCards.length > 0 ? (
+                      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                        {offlineCards.map((card, index) => (
+                          <div key={index} className="min-w-0">
+                            <ReadOnlyCartella card={card} cardNumber={index + 1} />
+                          </div>
+                        ))}
+                      </div>
+                    ) : offlineCards?.length === 0 ? (
+                      <Alert type="info" showIcon message="No cartellas are saved for this shop." />
+                    ) : null}
+                  </div>
+                ),
               },
             ]}
           />
@@ -203,5 +295,24 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
     </div>
   );
 };
+
+const ReadOnlyCartella = ({ card, cardNumber }: { card: IBingoCard; cardNumber: number }) => (
+  <div className="print-bingo-card-container">
+    <div className="print-bingo-card-grid">
+      <div className="print-bingo-row">
+        {(['B', 'I', 'N', 'G', 'O'] as const).map((column) => <div key={column} className="print-bingo-header">{column}</div>)}
+      </div>
+      {[0, 1, 2, 3, 4].map((row) => (
+        <div key={row} className="print-bingo-row">
+          {(['B', 'I', 'N', 'G', 'O'] as const).map((column) => {
+            const value = card[column][row];
+            return <div key={column} className={`print-bingo-card-ceils${column === 'N' && value === 'FREE' ? ' bingo-card-free-space h-full text-center' : ''}`}>{value}</div>;
+          })}
+        </div>
+      ))}
+    </div>
+    <div className="cartella-footer"><span>Card No.</span><span>{cardNumber}</span></div>
+  </div>
+);
 
 export default BingoDashboard;

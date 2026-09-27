@@ -37,6 +37,9 @@ textarea[readonly] { background: #f7f9fb; }
 .amount-input input { font-family: inherit; font-size: 15px; }
 .amount-input span { color: #63748a; font-weight: 700; }
 .credit-preview { display: flex; justify-content: space-between; gap: 12px; margin-top: 14px; padding: 14px; border: 1px solid #cce6d7; border-radius: 8px; color: #245c3e; background: #f0faf4; font-size: 13px; }
+.credit-preview div, .issued-summary { display: flex; flex-direction: column; gap: 5px; }
+.credit-preview strong, .issued-summary strong { font-size: 16px; }
+.issued-summary { gap: 10px; padding: 14px; border-radius: 8px; color: #245c3e; background: #f0faf4; font-size: 13px; }
 .status { margin-top: 16px; padding: 12px; border-radius: 8px; font-size: 13px; line-height: 1.45; }
 .status-error { color: #8d2727; background: #fff0f0; }
 .status-success { color: #1f6942; background: #eaf8ef; }

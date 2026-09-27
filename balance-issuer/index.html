@@ -26,12 +26,22 @@
           <span>ETB</span>
         </div>
         <div class="credit-preview">
-          <span>Balance credit (5× amount received)</span>
-          <strong id="credit-amount">0.00 ETB</strong>
+          <div>
+            <span>Commission received (20%)</span>
+            <strong id="commission-amount">0.00 ETB</strong>
+          </div>
+          <div>
+            <span>Balance credit (5× commission)</span>
+            <strong id="credit-amount">0.00 ETB</strong>
+          </div>
         </div>
         <div id="status" class="status hidden" role="status"></div>
         <button id="issue-credit" class="button button-primary">Generate balance text</button>
         <div id="credit-output" class="key-output hidden">
+          <div class="issued-summary">
+            <span>Commission (20%): <strong id="issued-commission">0.00 ETB</strong></span>
+            <span>Balance credit: <strong id="issued-credit-amount">0.00 ETB</strong></span>
+          </div>
           <label for="signed-credit">Balance text — send this to the customer</label>
           <textarea id="signed-credit" rows="4" spellcheck="false" readonly></textarea>
           <button id="copy-credit" class="button button-secondary">Copy balance text</button>
