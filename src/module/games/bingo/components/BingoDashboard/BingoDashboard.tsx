@@ -13,6 +13,7 @@ import BingoDashboardCard from '../BingoDashboardCard/BingoDashboardCard';
 import { LOCAL_SESSION } from '../../../../../constants/constants';
 import { isTauri } from '@tauri-apps/api/core';
 import OfflineBalance from '../OfflineBalance/OfflineBalance';
+import SubscriptionBanner from '../SubscriptionBanner/SubscriptionBanner';
 import {
   getOfflineDashboardSummary,
   getOfflineShop,
@@ -167,6 +168,7 @@ const BingoDashboard = ({ onBackToGame }: Props) => {
 
       <div className="flex min-w-0 flex-1 flex-col items-start justify-start">
         <span className="font-bold text-lg">Dashboard</span>
+        {offlineSession && <div className="mt-3 w-full"><SubscriptionBanner /></div>}
         {offlineSession ? (
           <Tabs
             className="mt-3 w-full min-w-0"

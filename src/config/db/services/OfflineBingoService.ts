@@ -5,6 +5,7 @@ import type { IBingoCard } from '../../../module/games/bingo/model/IBingoCard';
 import type { IGamePattern } from '../../../module/games/bingo/model/IGamePattern';
 import type { IAddCartella } from '../../../module/games/bingo/model/IAddCartella';
 import { getBingoDatabase } from './CashierShopCache';
+import { getSubscriptionStatusFromDatabase } from './SubscriptionService';
 import { isTauri } from '@tauri-apps/api/core';
 import { LOCAL_SESSION } from '../../../constants/constants';
 
@@ -35,10 +36,13 @@ export const OFFLINE_PATTERNS: IGamePattern[] = [
 
 const OFFLINE_GAME_BALANCE_FEE_RATE = 0.2;
 
+/** Games started while a subscription is active never take the 20% balance fee. */
+type OfflineGame = IBingoGame & { subscriptionPlan?: boolean };
+
 type OfflineShopState = {
   shop: ICashierBingoShop;
-  activeGame: IBingoGame | null;
-  gameHistory: Array<IBingoGame & { endedAt: string; result?: string; balanceFee?: number }>;
+  activeGame: OfflineGame | null;
+  gameHistory: Array<OfflineGame & { endedAt: string; result?: string; balanceFee?: number }>;
 };
 
 const stateKey = (accountId: number) => `offline-shop-${accountId}`;
@@ -218,8 +222,8 @@ async function getOfflineBalanceFromDatabase(database: Database, accountId: numb
   return (credits[0]?.balance ?? 0) - (debits[0]?.balance ?? 0);
 }
 
-function getGameCommission(game: IBingoGame | null): number {
-  if (!game) return 0;
+function getGameCommission(game: OfflineGame | null): number {
+  if (!game || game.subscriptionPlan) return 0;
   return Math.round(
     game.selectedCartella.length * game.betAmount * OFFLINE_GAME_BALANCE_FEE_RATE * 100,
   ) / 100;
@@ -254,7 +258,7 @@ export async function getOfflineDashboardSummary(accountId: number): Promise<Off
       0,
     );
     const totalPayIn = Math.round(
-      totalCollectedMoney * OFFLINE_GAME_BALANCE_FEE_RATE * 100,
+      games.reduce((total, game) => total + getGameCommission(game), 0) * 100,
     ) / 100;
     const balanceBeforeCurrentGame = await getOfflineBalanceFromDatabase(database, accountId);
 
@@ -302,9 +306,17 @@ export async function startOfflineGame(
 ): Promise<IBingoGame> {
   return withState(accountId, async (state) => {
     const database = await getBingoDatabase();
-    const balance = await getOfflineBalanceFromDatabase(database, accountId);
-    if (balance <= 0) {
-      throw new Error('Your balance is zero. Add balance from Dashboard > Balance before starting a game.');
+    // A subscription game may finish after the subscription expires.
+    if (state.activeGame?.subscriptionPlan) return state.activeGame;
+    const subscription = await getSubscriptionStatusFromDatabase(database, accountId);
+    if (subscription.hasSubscription && !subscription.isActive) {
+      throw new Error('Your monthly subscription has expired. Renew it from Dashboard > Balance before starting a new game.');
+    }
+    if (!subscription.hasSubscription) {
+      const balance = await getOfflineBalanceFromDatabase(database, accountId);
+      if (balance <= 0) {
+        throw new Error('Your balance is zero. Add balance from Dashboard > Balance before starting a game.');
+      }
     }
     if (state.activeGame) {
       // Closing the selection dialog must not discard the in-progress game.
@@ -321,6 +333,7 @@ export async function startOfflineGame(
       calledNumbers: [],
       gamePattern: pattern,
       isCalling: false,
+      subscriptionPlan: subscription.isActive,
     };
     return state.activeGame;
   });
@@ -352,12 +365,10 @@ export async function updateOfflineBetAmount(
 ): Promise<IBingoGame> {
   return withState(accountId, async (state) => {
     if (!state.activeGame) throw new Error('There is no active game. Start a new game first.');
-    const requiredFee = Math.round(
-      state.activeGame.selectedCartella.length * betAmount * OFFLINE_GAME_BALANCE_FEE_RATE * 100,
-    ) / 100;
+    const requiredFee = getGameCommission({ ...state.activeGame, betAmount });
     const database = await getBingoDatabase();
     const balance = await getOfflineBalanceFromDatabase(database, accountId);
-    if (requiredFee > balance) {
+    if (requiredFee > 0 && requiredFee > balance) {
       throw new Error('Balance must cover the 20% game fee for the selected cartellas. Add balance from Dashboard > Balance.');
     }
     state.activeGame.betAmount = betAmount;
@@ -376,10 +387,10 @@ export async function addOfflineCartella(
     if (selected.has(selection.selectedCartella)) selected.delete(selection.selectedCartella);
     else selected.add(selection.selectedCartella);
     const nextSelection = [...selected].sort((a, b) => a - b);
-    const requiredFee = Math.round(nextSelection.length * game.betAmount * OFFLINE_GAME_BALANCE_FEE_RATE * 100) / 100;
+    const requiredFee = getGameCommission({ ...game, selectedCartella: nextSelection });
     const database = await getBingoDatabase();
     const balance = await getOfflineBalanceFromDatabase(database, accountId);
-    if (requiredFee > balance) {
+    if (requiredFee > 0 && requiredFee > balance) {
       throw new Error('Balance must cover the 20% game fee before selecting these cartellas. Add balance from Dashboard > Balance.');
     }
     game.selectedCartella = nextSelection;
@@ -399,9 +410,7 @@ export async function endOfflineGame(
   return withState(accountId, async (state) => {
     if (!state.activeGame) return { status: true, message: 'No active game.' };
     const game = state.activeGame;
-    const requestedBalanceFee = result === 'ended'
-      ? Math.round(game.selectedCartella.length * game.betAmount * OFFLINE_GAME_BALANCE_FEE_RATE * 100) / 100
-      : 0;
+    const requestedBalanceFee = result === 'ended' ? getGameCommission(game) : 0;
     const balanceFee = requestedBalanceFee;
     if (balanceFee > 0) {
       const database = await getBingoDatabase();

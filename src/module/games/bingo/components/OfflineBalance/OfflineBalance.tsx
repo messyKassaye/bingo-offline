@@ -7,6 +7,13 @@ import {
   createBalanceRequestText,
 } from '../../../../../config/db/services/CashierShopCache';
 import { getOfflineDashboardSummary } from '../../../../../config/db/services/OfflineBingoService';
+import {
+  applySignedSubscription,
+  formatExpiry,
+  getSubscriptionStatus,
+  isSubscriptionText,
+  type SubscriptionStatus,
+} from '../../../../../config/db/services/SubscriptionService';
 import { getCashierBingoShopDepositAPI } from '../../slices/BingoShopSlice';
 
 type LocalSession = { id: number };
@@ -21,14 +28,19 @@ const OfflineBalance = () => {
   const [requestText, setRequestText] = useState('');
   const [balanceText, setBalanceText] = useState('');
   const [balance, setBalance] = useState<number | null>(null);
+  const [subscription, setSubscription] = useState<SubscriptionStatus | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
   const dispatch = useAppDispatch();
 
   const refreshBalance = useCallback(async () => {
     const account = getAccount();
-    const summary = await getOfflineDashboardSummary(account.id);
+    const [summary, subscriptionStatus] = await Promise.all([
+      getOfflineDashboardSummary(account.id),
+      getSubscriptionStatus(account.id),
+    ]);
     setBalance(summary.totalBalance);
+    setSubscription(subscriptionStatus);
   }, []);
 
   useEffect(() => {
@@ -70,17 +82,27 @@ const OfflineBalance = () => {
     setError('');
     try {
       const account = getAccount();
-      const newBalance = await applySignedBalanceCredit(
-        balanceText,
-        account.id,
-        BALANCE_SIGNING_PUBLIC_KEY,
-      );
-      setBalance(newBalance);
+      if (isSubscriptionText(balanceText)) {
+        const status = await applySignedSubscription(
+          balanceText,
+          account.id,
+          BALANCE_SIGNING_PUBLIC_KEY,
+        );
+        setSubscription(status);
+        message.success(`Subscription renewed until ${formatExpiry(status.expiresAt)}.`);
+      } else {
+        const newBalance = await applySignedBalanceCredit(
+          balanceText,
+          account.id,
+          BALANCE_SIGNING_PUBLIC_KEY,
+        );
+        setBalance(newBalance);
+        message.success('Signed credit added to this account.');
+      }
       setBalanceText('');
       await refreshBalance();
       await dispatch(getCashierBingoShopDepositAPI());
       window.dispatchEvent(new Event('offline-balance-updated'));
-      message.success('Signed credit added to this account.');
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'Could not apply credit.');
     } finally {
@@ -91,7 +113,18 @@ const OfflineBalance = () => {
   return (
     <section className="flex flex-col gap-3 min-w-[280px] max-w-[600px]">
       <h3 className="font-bold text-lg">Offline balance</h3>
-      {balance !== null && <div>Balance after current game commission: <strong>{balance.toLocaleString()} Br</strong></div>}
+      {subscription?.hasSubscription ? (
+        <div>
+          Monthly subscription:{' '}
+          {subscription.isActive ? (
+            <strong>active until {formatExpiry(subscription.expiresAt)} ({subscription.daysLeft} {subscription.daysLeft === 1 ? 'day' : 'days'} left)</strong>
+          ) : (
+            <strong className="text-red-600">expired on {formatExpiry(subscription.expiresAt)}</strong>
+          )}
+        </div>
+      ) : (
+        balance !== null && <div>Balance after current game commission: <strong>{balance.toLocaleString()} Br</strong></div>
+      )}
       {!BALANCE_SIGNING_PUBLIC_KEY.trim() && (
         <Alert type="warning" showIcon message="Balance verification key is not configured yet." />
       )}
@@ -104,16 +137,16 @@ const OfflineBalance = () => {
           <Button onClick={copyRequest}>Copy device ID</Button>
         </>
       )}
-      <label className="font-semibold" htmlFor="signed-balance-text">Paste the balance text from the issuer</label>
+      <label className="font-semibold" htmlFor="signed-balance-text">Paste the balance or subscription text from the issuer</label>
       <Input.TextArea
         id="signed-balance-text"
         value={balanceText}
         onChange={(event) => setBalanceText(event.target.value)}
-        placeholder="Paste the balance text you received"
+        placeholder="Paste the text you received"
         autoSize={{ minRows: 4, maxRows: 8 }}
       />
       <Button type="primary" loading={busy} disabled={!balanceText.trim()} onClick={uploadCredit}>
-        Add balance
+        Apply text
       </Button>
     </section>
   );

@@ -19,6 +19,7 @@ import {
 } from './slices/BingoGameSlice';
 import AudioPlayer from '../../common/components/AuidoPlayer/AudioPlayer';
 import { ICartella } from './model/ICartella';
+import SubscriptionBanner from './components/SubscriptionBanner/SubscriptionBanner';
 
 const BingoGame = () => {
   const { status, data: cashierBingoShopData } = useAppSelector(
@@ -34,11 +35,7 @@ const BingoGame = () => {
   useEffect(() => {
     //prepare cartella numbers
     if (status && cashierBingoShopData.agentShop.company?.cards) {
-      const totalCards =
-        cashierBingoShopData?.agentShop?.name === 'Ayu' || 'Lucky2'
-          ? cashierBingoShopData.agentShop.company.cards.length
-          : 100;
-      dispatch(updateTotalCartella(totalCards));
+      dispatch(updateTotalCartella(cashierBingoShopData.agentShop.company.cards.length));
     }
   }, [status, cashierBingoShopData]);
 
@@ -77,6 +74,7 @@ const BingoGame = () => {
   return (
     <div className="w-full h-screen flex flex-col items-start justify-start gap-2">
       <BingoHeader />
+      <SubscriptionBanner />
       <BingoMain />
       <AudioPlayer />
       <BingoFooter />

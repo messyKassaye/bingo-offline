@@ -25,6 +25,14 @@ The NSIS installer is written to `balance-issuer/src-tauri/target/release/bundle
 3. Copy the generated balance text and send it back to the customer.
 4. The customer pastes it into the cashier app. The app checks the device, date, signature, and one-time credit ID before adding the balance.
 
+## How to issue a monthly subscription
+
+1. Choose **Monthly subscription** at the top of the issuer.
+2. Enter the customer's device ID and the number of months paid (1–12). Each month is 30 days.
+3. Copy the generated text and send it to the customer. They paste it into the same box as balance text (Dashboard > Balance).
+
+A shop with a subscription plays without the 20% commission. Renewing early adds the new days after the current expiry date. From 5 days before expiry, Bingo Desktop shows a banner and a daily Windows notification. After expiry, a game already in progress can finish, but new games are blocked until the subscription is renewed.
+
 The signing keys are configured by the app administrator at build time using `VITE_BALANCE_SIGNING_PUBLIC_KEY` and `VITE_BALANCE_ISSUER_PRIVATE_KEY`. Keep the private signing key secret and distribute this issuer app only to trusted balance operators. The device ID is inside the balance code but is not displayed as plain text. This app does not send data over the network.
 
 For setup and run instructions for both desktop apps, see the repository [README](../README.md).

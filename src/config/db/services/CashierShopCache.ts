@@ -52,6 +52,19 @@ export async function getBingoDatabase(): Promise<Database> {
       )
     `);
     await database.execute(`
+      CREATE TABLE IF NOT EXISTS subscriptions (
+        subscription_id TEXT PRIMARY KEY NOT NULL,
+        account_id INTEGER NOT NULL,
+        device_id TEXT NOT NULL,
+        days INTEGER NOT NULL CHECK(days > 0),
+        issue_date TEXT NOT NULL,
+        starts_at TEXT NOT NULL,
+        expires_at TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        FOREIGN KEY(account_id) REFERENCES local_accounts(id)
+      )
+    `);
+    await database.execute(`
       CREATE TABLE IF NOT EXISTS offline_game_patterns (
         id INTEGER NOT NULL,
         account_id INTEGER NOT NULL,
@@ -246,19 +259,19 @@ function decodeSignature(value: string): Uint8Array<ArrayBuffer> {
   return fromBase64(base64.padEnd(Math.ceil(base64.length / 4) * 4, '='));
 }
 
-function decodeBase64Url(value: string): Uint8Array<ArrayBuffer> {
+export function decodeBase64Url(value: string): Uint8Array<ArrayBuffer> {
   const base64 = value.replace(/-/g, '+').replace(/_/g, '/');
   return fromBase64(base64.padEnd(Math.ceil(base64.length / 4) * 4, '='));
 }
 
-function decodePublicKey(value: string): Uint8Array<ArrayBuffer> {
+export function decodePublicKey(value: string): Uint8Array<ArrayBuffer> {
   const encoded = value
     .replace(/-----BEGIN PUBLIC KEY-----|-----END PUBLIC KEY-----/g, '')
     .replace(/\s/g, '');
   return fromBase64(encoded);
 }
 
-function isValidCreditDate(value: string): boolean {
+export function isValidCreditDate(value: string): boolean {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
   const date = new Date(`${value}T00:00:00.000Z`);
   if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== value) {
